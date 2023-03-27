@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPFunny</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <main>
+        <h1>ChatGPTeehee</h1>
+        <aside class="aside">
+          <p class="newChat">+ New chat</p>
+          <details>
+            <summary>Question suggestions</summary>
+            <ul>
+                <li>Ask yes or no questions</li>
+                <li>Say "My name is..."</li>
+                <li>Ask "What is your name?"</li>
+                <li>Ask "What is my name?"</li>
+                <li>Say "I am .. years old"</li>
+                <li>Ask "How old am I"</li>
+                <li>"Do you..."</li>
+                <li>"Did you..."</li>
+                <li>"Am I..."</li>
+                <li>"Should I..."</li>
+                <li>"Is there..."</li>
+                <li>"Are you..."</li>
+                <li>"Will they..."</li>
+                <li>"Can he..."</li>
+                <li>"Have anybody..."</li>
+                <li>"Would there..."</li>
+                <li>"Did she..."</li>
+            </ul>
+          </details>
+          <div class="hr">
+            <div class="clearConversation" id="clearConversation">
+                <img src="/assets/trash.PNG" alt="delete conversation" class="trash"  />
+                Clear conversation
+            </div>
+            <div class="darkMode" id="darkMode">
+                <img src="/assets/moon.PNG" alt="dark mode" class="moon" />
+                Dark mode
+            </div>
+        </aside>
+        <div class="output" id="output"></div>
+        <section class="capabilities" id="suggestions">
+            <div>Ask yes or no questions</div>
+            <div>Say "My name is..."</div>
+            <div>Ask "What is your name?"</div>
+            <div>Ask "What is my name?"</div>
+            <div>Say "I am .. years old"</div>
+            <div>Ask "How old am I"</div>
+      
+            <div>Ask questions starting with Do - Did - Am or Is</div>
+            <div>Ask questions starting with Should - Would or Will</div>
+            <div>Ask questions starting with Are - Can or Have</div>
+          </section>
+    </main>
+    <footer>
+      <input type="text" class="inputText" id="inputText" />
+      <div id="send">
+        <div class="bgSend" id="bgSend"></div>
+        <img
+          src="/assets/send.png"
+          alt="Send message button"
+          class="send"
+        />
+      </div>
+      <div class="whiteBg"></div>
+    </footer>
+    <!-- Based on my impression of you, I would say you are 4 years old. 
+
+    Type one letter at a time, like chatgpt. 
+
+    How are you?
+
+    hi, hello, good bye, good morning, good night
+    
+    Store basic info in local storage, like name & age 
+
+    When the conversation has started, put the suggestions to the left
+
+    What is your name? You have not provided me with your name yet, 
+    but based on my impression of you, I would say your name is 
+    "something stupid and funny".
+
+    When you ask such poorly formulated questions, I can't answer them.
+
+    When you click a question suggestion, it automatically answers it -->
+
+  </body>
+</html>
