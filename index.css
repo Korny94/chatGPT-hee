@@ -115,6 +115,7 @@ li {
   text-align: left;
   border-radius: 0.2rem;
   padding: 0.8rem;
+  cursor: pointer;
 }
 
 .capabilities {
@@ -146,6 +147,14 @@ li {
   border-radius: 0.5rem;
   box-shadow: 0px 3px 7px 1px rgba(93, 93, 93, 0.1);
   z-index: 1;
+}
+
+.chatBg {
+  width: 100vw;
+  background-color: #f7f7f8;
+  text-align: left;
+  display: flex;
+  align-items: start;
 }
 
 .inputText:focus {
