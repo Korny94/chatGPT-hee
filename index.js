@@ -83,6 +83,8 @@ function sendMessage(event) {
     response("Hello, how are you?");
   } else if (
     outputLower == storageLower + "<br>bad<br>" ||
+    outputLower == storageLower + "<br>im bad<br>" ||
+    outputLower == storageLower + "<br>i'm bad<br>" ||
     outputLower == storageLower + "<br>not good<br>" ||
     outputLower == storageLower + "<br>not so good<br>" ||
     outputLower == storageLower + "<br>im not so good<br>" ||
@@ -93,8 +95,14 @@ function sendMessage(event) {
     response("That's good to hear! Hope it gets worse!");
   } else if (
     outputLower == storageLower + "<br>good<br>" ||
+    outputLower == storageLower + "<br>great<br>" ||
+    outputLower == storageLower + "<br>awesome<br>" ||
+    outputLower == storageLower + "<br>amazing<br>" ||
+    outputLower == storageLower + "<br>fine<br>" ||
     outputLower == storageLower + "<br>im good<br>" ||
     outputLower == storageLower + "<br>i'm good<br>" ||
+    outputLower == storageLower + "<br>im fine<br>" ||
+    outputLower == storageLower + "<br>i'm fine<br>" ||
     outputLower == storageLower + "<br>not bad<br>" ||
     outputLower == storageLower + "<br>cant complain<br>" ||
     outputLower == storageLower + "<br>can't complain<br>"
