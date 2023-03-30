@@ -1612,7 +1612,11 @@ function sendMessage(event) {
     response(randomCould);
   } else if (
     outputLower.startsWith(storageLower + "<br>do you think") ||
-    outputLower.startsWith(storageLower + "<br>but do you think")
+    outputLower.startsWith(storageLower + "<br>but do you think") ||
+    outputLower.startsWith(storageLower + "<br>and do you think") ||
+    outputLower.startsWith(storageLower + "<br>do you") ||
+    outputLower.startsWith(storageLower + "<br>but do you") ||
+    outputLower.startsWith(storageLower + "<br>and do you")
   ) {
     let doYouThink = [
       "Of course I do!",
