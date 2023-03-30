@@ -748,6 +748,62 @@ function sendMessage(event) {
       `I have no idea, but based on my impression of you and how poor your reading skills are, I would guess your favorite book is '${randomBook}'.`
     );
   } else if (
+    outputLower.startsWith(storageLower + "<br>shower") ||
+    outputLower.startsWith(storageLower + "<br>tell me a shower") ||
+    outputLower.startsWith(storageLower + "<br>thought") ||
+    outputLower.startsWith(storageLower + "<br>theory") ||
+    outputLower.startsWith(storageLower + "<br>tell me a theory") ||
+    outputLower.startsWith(storageLower + "<br>weird thought") ||
+    outputLower.startsWith(storageLower + "<br>random") ||
+    outputLower.startsWith(storageLower + "<br>deep")
+  ) {
+    let generic = [
+      "What if colors look different to each of us, and what I see as 'red' is actually what you see as 'green'?",
+      "What if we're all just characters in a video game being controlled by players from another dimension?",
+      "'Go to bed, you'll feel better in the morning' is the human version of 'Did you turn it off and turn it back on again?'",
+      "Maybe plants are really farming us, giving us oxygen until we eventually expire and turn into mulch which they can consume",
+      "If your calculator had a history, it would be more embarrassing than your browser history.",
+      "Lawyers hope you get sued, doctors hope you get sick, cops hope you're criminal, mechanics hope you have car trouble, but only a thief wishes prosperity for you.",
+      "Tall people are expected to use their reach to help shorter people, but if a tall person were to ask a short person to hand them something they dropped on the floor it'd be insulting.",
+      "When you say 'Forward' or 'Back', your lips move in those directions.",
+      "Tobacco companies kill their best customers and condom companies kill their future customers.",
+      "When a company offers me a better price after I cancel their subscription, they're just admitting they were overcharging me.",
+      "Somewhere in the world, there is somebody with your dream job that hates going to work everyday.",
+      "Christmas feels more like a deadline than a holiday.",
+      "'DO NOT TOUCH' would probably be a really unsettling thing to read in braille.",
+      "People who are goodlooking but have terrible personalities are basically real life click baits.",
+      "Nothing is on fire, fire is on things.",
+      "I mostly use my driver's license to buy stuff that impairs my ability to drive.",
+      "Someone who says 'I'll be there in 6 minutes' will normally arrive before someone who says 'I will be there in 5 minutes'.",
+      "If aliens come to earth, we have to explain why we made dozens of movies in which we fight and kill them.",
+      "Every time a character dies on a TV show I just feel bad for the actor who pretty much just got fired in front of us.",
+      "April Fool's Day is the one day of the year when people critically evaluate news articles before accepting them as true.",
+      "History classes are only going to get longer and harder as time goes on.",
+      "When Sweden is playing Denmark, it is SWE-DEN. The remaining letters, not used, is DEN-MARK.",
+      "Your dog doesn't know you can make mistakes. When you trip over him in the dark, he thinks you got up just to kick him in the head.",
+      "I'm glad dogs can't read the 'no dogs allowed' signs so they don't feel sad and left out.",
+      "The person who would proof read Hitler's speeches was a grammar Nazi.",
+      "Humans are really bad at recharging, it takes about 8 hours charge for 16 hours of use.",
+      "Scientists are adult kids stuck in the 'why phase'.",
+      "I never realize how explicit my music is until my parents hear it in the car.",
+      "When jogging, we put on special clothes so people don't think we are running from or to something.",
+      "In order to fall asleep, you have to pretend to be asleep.",
+      "It would be a good idea to have 'The Price Is Right' with billionaires, just to see how out of touch they are.",
+      "When the older generations says this generation is terrible, they're really saying they sucked as parents.",
+      "The object of golf is to play the least amout of golf.",
+      "Almost every hand I've ever shaken has had a dick in it.",
+      "The sinking of the Titanic must have been a miracle to the lobsters in the kitchen.",
+      "Imagine how terrifying fire would be if it wasn't a light source...",
+      "If opposites attract, you should be dating a gorgeous, billionaire supermodel that has a loving family.",
+      "Brushing your teeth is the only time you clean your skeleton.",
+      "Dogs probably destroy shoes because they see humans put them on before they leave the house.",
+      "'Where are you' is probably the least used phrase in sign language.",
+      "Whenever you dig up dirt or a rock, that could be the first time it has seen the sun in millions of years.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
     outputLower.startsWith(storageLower + "<br>what is my favorite tv") ||
     outputLower.startsWith(storageLower + "<br>whats my favorite tv") ||
     outputLower.startsWith(storageLower + "<br>what's my favorite tv") ||
@@ -1715,62 +1771,6 @@ function sendMessage(event) {
     const randomIndex = Math.floor(Math.random() * why.length);
     const randomWhy = why[randomIndex];
     response(randomWhy);
-  } else if (
-    outputLower.startsWith(storageLower + "<br>shower") ||
-    outputLower.startsWith(storageLower + "<br>tell me a shower") ||
-    outputLower.startsWith(storageLower + "<br>thought") ||
-    outputLower.startsWith(storageLower + "<br>theory") ||
-    outputLower.startsWith(storageLower + "<br>tell me a theory") ||
-    outputLower.startsWith(storageLower + "<br>weird thought") ||
-    outputLower.startsWith(storageLower + "<br>random") ||
-    outputLower.startsWith(storageLower + "<br>deep")
-  ) {
-    let generic = [
-      "What if colors look different to each of us, and what I see as 'red' is actually what you see as 'green'?",
-      "What if we're all just characters in a video game being controlled by players from another dimension?",
-      "'Go to bed, you'll feel better in the morning' is the human version of 'Did you turn it off and turn it back on again?'",
-      "Maybe plants are really farming us, giving us oxygen until we eventually expire and turn into mulch which they can consume",
-      "If your calculator had a history, it would be more embarrassing than your browser history.",
-      "Lawyers hope you get sued, doctors hope you get sick, cops hope you're criminal, mechanics hope you have car trouble, but only a thief wishes prosperity for you.",
-      "Tall people are expected to use their reach to help shorter people, but if a tall person were to ask a short person to hand them something they dropped on the floor it'd be insulting.",
-      "When you say 'Forward' or 'Back', your lips move in those directions.",
-      "Tobacco companies kill their best customers and condom companies kill their future customers.",
-      "When a company offers me a better price after I cancel their subscription, they're just admitting they were overcharging me.",
-      "Somewhere in the world, there is somebody with your dream job that hates going to work everyday.",
-      "Christmas feels more like a deadline than a holiday.",
-      "'DO NOT TOUCH' would probably be a really unsettling thing to read in braille.",
-      "People who are goodlooking but have terrible personalities are basically real life click baits.",
-      "Nothing is on fire, fire is on things.",
-      "I mostly use my driver's license to buy stuff that impairs my ability to drive.",
-      "Someone who says 'I'll be there in 6 minutes' will normally arrive before someone who says 'I will be there in 5 minutes'.",
-      "If aliens come to earth, we have to explain why we made dozens of movies in which we fight and kill them.",
-      "Every time a character dies on a TV show I just feel bad for the actor who pretty much just got fired in front of us.",
-      "April Fool's Day is the one day of the year when people critically evaluate news articles before accepting them as true.",
-      "History classes are only going to get longer and harder as time goes on.",
-      "When Sweden is playing Denmark, it is SWE-DEN. The remaining letters, not used, is DEN-MARK.",
-      "Your dog doesn't know you can make mistakes. When you trip over him in the dark, he thinks you got up just to kick him in the head.",
-      "I'm glad dogs can't read the 'no dogs allowed' signs so they don't feel sad and left out.",
-      "The person who would proof read Hitler's speeches was a grammar Nazi.",
-      "Humans are really bad at recharging, it takes about 8 hours charge for 16 hours of use.",
-      "Scientists are adult kids stuck in the 'why phase'.",
-      "I never realize how explicit my music is until my parents hear it in the car.",
-      "When jogging, we put on special clothes so people don't think we are running from or to something.",
-      "In order to fall asleep, you have to pretend to be asleep.",
-      "It would be a good idea to have 'The Price Is Right' with billionaires, just to see how out of touch they are.",
-      "When the older generations says this generation is terrible, they're really saying they sucked as parents.",
-      "The object of golf is to play the least amout of golf.",
-      "Almost every hand I've ever shaken has had a dick in it.",
-      "The sinking of the Titanic must have been a miracle to the lobsters in the kitchen.",
-      "Imagine how terrifying fire would be if it wasn't a light source...",
-      "If opposites attract, you should be dating a gorgeous, billionaire supermodel that has a loving family.",
-      "Brushing your teeth is the only time you clean your skeleton.",
-      "Dogs probably destroy shoes because they see humans put them on before they leave the house.",
-      "'Where are you' is probably the least used phrase in sign language.",
-      "Whenever you dig up dirt or a rock, that could be the first time it has seen the sun in millions of years.",
-    ];
-    const randomIndex = Math.floor(Math.random() * generic.length);
-    const randomGeneric = generic[randomIndex];
-    response(randomGeneric);
   } else if (
     outputLower.startsWith(storageLower + "<br>joke") ||
     outputLower.startsWith(storageLower + "<br>tell me a joke") ||
