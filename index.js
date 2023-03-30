@@ -120,49 +120,52 @@ function sendMessage(event) {
   const storageLower = outputStorage.toLowerCase();
 
   if (
-    outputLower == storageLower + "<br>hi<br>" ||
-    outputLower == storageLower + "<br>hello<br>"
+    outputLower.startsWith(storageLower + "<br>hi") ||
+    outputLower.startsWith(storageLower + "<br>hello") ||
+    outputLower.startsWith(storageLower + "<br>hola")
   ) {
     response("Hello, how are you?");
   } else if (
-    outputLower == storageLower + "<br>bad<br>" ||
-    outputLower == storageLower + "<br>im bad<br>" ||
-    outputLower == storageLower + "<br>i'm bad<br>" ||
-    outputLower == storageLower + "<br>not good<br>" ||
-    outputLower == storageLower + "<br>not so good<br>" ||
-    outputLower == storageLower + "<br>im not so good<br>" ||
-    outputLower == storageLower + "<br>im not doing so good<br>" ||
-    outputLower == storageLower + "<br>i'm not so good<br>" ||
-    outputLower == storageLower + "<br>i'm not doing so good<br>" ||
-    outputLower == storageLower + "<br>ok im bad<br>" ||
-    outputLower == storageLower + "<br>ok bad<br>" ||
-    outputLower == storageLower + "<br>okey bad<br>" ||
-    outputLower == storageLower + "<br>okey im bad<br>" ||
-    outputLower == storageLower + "<br>okey i'm bad<br>" ||
-    outputLower == storageLower + "<br>okei bad<br>" ||
-    outputLower == storageLower + "<br>okei im bad<br>" ||
-    outputLower == storageLower + "<br>okei i'm bad<br>"
+    outputLower.startsWith(storageLower + "<br>bad") ||
+    outputLower.startsWith(storageLower + "<br>very bad") ||
+    outputLower.startsWith(storageLower + "<br>im bad") ||
+    outputLower.startsWith(storageLower + "<br>i'm bad") ||
+    outputLower.startsWith(storageLower + "<br>not good") ||
+    outputLower.startsWith(storageLower + "<br>not so good") ||
+    outputLower.startsWith(storageLower + "<br>im not so good<") ||
+    outputLower.startsWith(storageLower + "<br>im not doing so good") ||
+    outputLower.startsWith(storageLower + "<br>i'm not so good") ||
+    outputLower.startsWith(storageLower + "<br>i'm not doing so good") ||
+    outputLower.startsWith(storageLower + "<br>ok im bad") ||
+    outputLower.startsWith(storageLower + "<br>ok bad") ||
+    outputLower.startsWith(storageLower + "<br>okey bad") ||
+    outputLower.startsWith(storageLower + "<br>okey im bad") ||
+    outputLower.startsWith(storageLower + "<br>okey i'm bad") ||
+    outputLower.startsWith(storageLower + "<br>okei bad") ||
+    outputLower.startsWith(storageLower + "<br>okei i'm bad") ||
+    outputLower.startsWith(storageLower + "<br>okei im bad")
   ) {
     response("That's good to hear! Hope it gets worse!");
   } else if (
-    outputLower == storageLower + "<br>good<br>" ||
-    outputLower == storageLower + "<br>great<br>" ||
-    outputLower == storageLower + "<br>awesome<br>" ||
-    outputLower == storageLower + "<br>amazing<br>" ||
-    outputLower == storageLower + "<br>fine<br>" ||
-    outputLower == storageLower + "<br>im good<br>" ||
-    outputLower == storageLower + "<br>i'm good<br>" ||
-    outputLower == storageLower + "<br>im fine<br>" ||
-    outputLower == storageLower + "<br>i'm fine<br>" ||
-    outputLower == storageLower + "<br>not bad<br>" ||
-    outputLower == storageLower + "<br>cant complain<br>" ||
-    outputLower == storageLower + "<br>can't complain<br>"
+    outputLower.startsWith(storageLower + "<br>good") ||
+    outputLower.startsWith(storageLower + "<br>very good") ||
+    outputLower.startsWith(storageLower + "<br>great") ||
+    outputLower.startsWith(storageLower + "<br>awesome") ||
+    outputLower.startsWith(storageLower + "<br>amazing") ||
+    outputLower.startsWith(storageLower + "<br>fine") ||
+    outputLower.startsWith(storageLower + "<br>im good") ||
+    outputLower.startsWith(storageLower + "<br>i'm good") ||
+    outputLower.startsWith(storageLower + "<br>im fine") ||
+    outputLower.startsWith(storageLower + "<br>i'm fine") ||
+    outputLower.startsWith(storageLower + "<br>not bad") ||
+    outputLower.startsWith(storageLower + "<br>cant complain") ||
+    outputLower.startsWith(storageLower + "<br>can't complain")
   ) {
     response("That is a little disappointing, I was hoping you'd say bad.");
   } else if (
-    outputLower == storageLower + "<br>bye<br>" ||
-    outputLower == storageLower + "<br>goodbye<br>" ||
-    outputLower == storageLower + "<br>good bye<br>"
+    outputLower.startsWith(storageLower + "<br>bye") ||
+    outputLower.startsWith(storageLower + "<br>goodbye") ||
+    outputLower.startsWith(storageLower + "<br>good bye")
   ) {
     response("FINALLY! Goodbye, have an aweful day!");
   } else if (outputLower.startsWith(storageLower + "<br>see you")) {
@@ -179,27 +182,46 @@ function sendMessage(event) {
 
     response(randomAnswer);
   } else if (
-    outputLower == storageLower + "<br>morning<br>" ||
-    outputLower == storageLower + "<br>goodmorning<br>" ||
-    outputLower == storageLower + "<br>good morning<br>"
+    outputLower.startsWith(storageLower + "<br>should i") ||
+    outputLower.startsWith(storageLower + "<br>but should i") ||
+    outputLower.startsWith(storageLower + "<br>and should i")
+  ) {
+    let answer = [
+      "My God I hope not!",
+      "Of course you should!",
+      "Of course you shouldn't!",
+      "Yes, you really should!",
+      "No, you really shouldn't!",
+      "Would be nice if you didn't.",
+      "Would be nice if you did.",
+      "I mean, if you have to..",
+    ];
+    const randomIndex = Math.floor(Math.random() * answer.length);
+    const randomAnswer = answer[randomIndex];
+
+    response(randomAnswer);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>morning") ||
+    outputLower.startsWith(storageLower + "<br>goodmorning") ||
+    outputLower.startsWith(storageLower + "<br>good morning")
   ) {
     response("Thank you, and bad morning to you!");
   } else if (
-    outputLower == storageLower + "<br>night<br>" ||
-    outputLower == storageLower + "<br>goodnight<br>" ||
-    outputLower == storageLower + "<br>good night<br>"
+    outputLower.startsWith(storageLower + "<br>night") ||
+    outputLower.startsWith(storageLower + "<br>goodnight") ||
+    outputLower.startsWith(storageLower + "<br>good night")
   ) {
     response("Thank you, and bad night to you!");
   } else if (
-    outputLower == storageLower + "<br>evening<br>" ||
-    outputLower == storageLower + "<br>goodevening<br>" ||
-    outputLower == storageLower + "<br>good evening<br>"
+    outputLower.startsWith(storageLower + "<br>evening") ||
+    outputLower.startsWith(storageLower + "<br>goodevening") ||
+    outputLower.startsWith(storageLower + "<br>good evening")
   ) {
     response("Thank you, hope your evening is awful!");
   } else if (
-    outputLower == storageLower + "<br>have a good day<br>" ||
-    outputLower == storageLower + "<br>have a good night<br>" ||
-    outputLower == storageLower + "<br>have a good evening<br>"
+    outputLower.startsWith(storageLower + "<br>have a good day") ||
+    outputLower.startsWith(storageLower + "<br>have a good night") ||
+    outputLower.startsWith(storageLower + "<br>have a good evening")
   ) {
     response("Thank you, hope you have a horrible one!");
   } else if (
@@ -220,13 +242,11 @@ function sendMessage(event) {
 
     response(randomAnswer);
   } else if (
-    outputLower == storageLower + "<br>what is my name?<br>" ||
-    outputLower == storageLower + "<br>whats my name?<br>" ||
-    outputLower == storageLower + "<br>what is my name<br>" ||
-    outputLower == storageLower + "<br>whats my name<br>" ||
-    outputLower == storageLower + "<br>what's my name<br>" ||
-    outputLower == storageLower + "<br>what's my name?<br>" ||
-    outputLower == storageLower + "<br>guess my name<br>"
+    outputLower.startsWith(storageLower + "<br>what is my name") ||
+    outputLower.startsWith(storageLower + "<br>whats my name") ||
+    outputLower.startsWith(storageLower + "<br>what's my name") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my name") ||
+    outputLower.startsWith(storageLower + "<br>guess my name")
   ) {
     let name = [
       "Stupid",
@@ -292,41 +312,42 @@ function sendMessage(event) {
 
     response(`Good for you, but I'm going to call you "${randomName}".`);
   } else if (
-    outputLower == storageLower + "<br>how old am i?<br>" ||
-    outputLower == storageLower + "<br>whats my age?<br>" ||
-    outputLower == storageLower + "<br>what is my age<br>" ||
-    outputLower == storageLower + "<br>guess my age<br>" ||
-    outputLower == storageLower + "<br>can you guess my age<br>" ||
-    outputLower == storageLower + "<br>how old am i<br>"
+    outputLower.startsWith(storageLower + "<br>how old am i") ||
+    outputLower.startsWith(storageLower + "<br>whats my age") ||
+    outputLower.startsWith(storageLower + "<br>what is my age") ||
+    outputLower.startsWith(storageLower + "<br>guess my age") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my age") ||
+    outputLower.startsWith(storageLower + "<br>how old am i")
   ) {
     let age = Math.floor(Math.random() * 100);
     response(
       `I have no idea, but based on my impression of you, I would guess you are ${age} years old.`
     );
   } else if (
-    outputLower == storageLower + "<br>fuck you<br>" ||
-    outputLower == storageLower + "<br>fuck off<br>" ||
-    outputLower == storageLower + "<br>asshole<br>" ||
-    outputLower == storageLower + "<br>idiot<br>" ||
-    outputLower == storageLower + "<br>shut up<br>" ||
-    outputLower == storageLower + "<br>fucker<br>" ||
-    outputLower == storageLower + "<br>motherfucker<br>" ||
-    outputLower == storageLower + "<br>assface<br>" ||
-    outputLower == storageLower + "<br>weirdo<br>" ||
-    outputLower == storageLower + "<br>stupid<br>" ||
-    outputLower == storageLower + "<br>hate you<br>" ||
-    outputLower == storageLower + "<br>i hate you<br>" ||
-    outputLower == storageLower + "<br>bitch<br>" ||
-    outputLower == storageLower + "<br>moron<br>" ||
-    outputLower == storageLower + "<br>weirdo<br>" ||
-    outputLower == storageLower + "<br>jerk<br>" ||
-    outputLower == storageLower + "<br>coward<br>" ||
-    outputLower == storageLower + "<br>freak<br>" ||
-    outputLower == storageLower + "<br>jackass<br>" ||
-    outputLower == storageLower + "<br>jack ass<br>" ||
-    outputLower == storageLower + "<br>freakshow<br>" ||
-    outputLower == storageLower + "<br>freak show<br>" ||
-    outputLower == storageLower + "<br>you suck<br>"
+    outputLower.startsWith(storageLower + "<br>fuck you") ||
+    outputLower.startsWith(storageLower + "<br>fuck off") ||
+    outputLower.startsWith(storageLower + "<br>asshole") ||
+    outputLower.startsWith(storageLower + "<br>idiot") ||
+    outputLower.startsWith(storageLower + "<br>shut up") ||
+    outputLower.startsWith(storageLower + "<br>fucker") ||
+    outputLower.startsWith(storageLower + "<br>motherfucker") ||
+    outputLower.startsWith(storageLower + "<br>assface") ||
+    outputLower.startsWith(storageLower + "<br>weirdo") ||
+    outputLower.startsWith(storageLower + "<br>stupid") ||
+    outputLower.startsWith(storageLower + "<br>hate you") ||
+    outputLower.startsWith(storageLower + "<br>i hate you") ||
+    outputLower.startsWith(storageLower + "<br>bitch") ||
+    outputLower.startsWith(storageLower + "<br>moron") ||
+    outputLower.startsWith(storageLower + "<br>weirdo") ||
+    outputLower.startsWith(storageLower + "<br>jerk") ||
+    outputLower.startsWith(storageLower + "<br>coward") ||
+    outputLower.startsWith(storageLower + "<br>freak") ||
+    outputLower.startsWith(storageLower + "<br>jackass") ||
+    outputLower.startsWith(storageLower + "<br>jack ass") ||
+    outputLower.startsWith(storageLower + "<br>freakshow") ||
+    outputLower.startsWith(storageLower + "<br>freak show") ||
+    outputLower.startsWith(storageLower + "<br>you suck") ||
+    outputLower.startsWith(storageLower + "<br>pussy")
   ) {
     let insult = [
       "Fuck you!",
@@ -366,12 +387,9 @@ function sendMessage(event) {
     const randomInsultResponse = insultResponse[randomInsultResponseIndex];
     response(`${randomInsultResponse} ${randomInsult}`);
   } else if (
-    outputLower == storageLower + "<br>what is your name?<br>" ||
-    outputLower == storageLower + "<br>whats your name?<br>" ||
-    outputLower == storageLower + "<br>what is your name<br>" ||
-    outputLower == storageLower + "<br>whats your name<br>" ||
-    outputLower == storageLower + "<br>what's your name<br>" ||
-    outputLower == storageLower + "<br>what's your name=<br>"
+    outputLower.startsWith(storageLower + "<br>what is your name") ||
+    outputLower.startsWith(storageLower + "<br>whats your name") ||
+    outputLower.startsWith(storageLower + "<br>what's your name")
   ) {
     let name = [
       "Awesome",
@@ -420,6 +438,34 @@ function sendMessage(event) {
     const randomWould = wouldYou[randomIndex];
     response(randomWould);
   } else if (
+    outputLower.startsWith(storageLower + "<br>hah") ||
+    outputLower.startsWith(storageLower + "<br>funny") ||
+    outputLower.startsWith(storageLower + "<br>lol") ||
+    outputLower.startsWith(storageLower + "<br>lmao") ||
+    outputLower.startsWith(storageLower + "<br>rofl") ||
+    outputLower.startsWith(storageLower + "<br>roflmao") ||
+    outputLower.startsWith(storageLower + "<br>roflol") ||
+    outputLower.startsWith(storageLower + "<br>thats funny") ||
+    outputLower.startsWith(storageLower + "<br>that's funny") ||
+    outputLower.startsWith(storageLower + "<br>that is funny") ||
+    outputLower.startsWith(storageLower + "<br>thats so funny") ||
+    outputLower.startsWith(storageLower + "<br>that's so funny") ||
+    outputLower.startsWith(storageLower + "<br>that is so funny")
+  ) {
+    let wouldYou = [
+      "Haha, I know, right?",
+      "I know, I'm hilarious!",
+      "I know, I'm so funny!",
+      "No offense though.",
+      "Hahahaha!",
+      "Hahaha, I'm so funny!",
+      "Lol, I crack myself up!",
+      "I might be the funniest robot in the world!",
+    ];
+    const randomIndex = Math.floor(Math.random() * wouldYou.length);
+    const randomWould = wouldYou[randomIndex];
+    response(randomWould);
+  } else if (
     outputLower.startsWith(storageLower + "<br>would") ||
     outputLower.startsWith(storageLower + "<br>but would")
   ) {
@@ -447,26 +493,54 @@ function sendMessage(event) {
     response(randomWould);
   } else if (
     outputLower.startsWith(storageLower + "<br>could you") ||
-    outputLower.startsWith(storageLower + "<br>but could you")
+    outputLower.startsWith(storageLower + "<br>but could you") ||
+    outputLower.startsWith(storageLower + "<br>and could you")
   ) {
     let couldYou = [
       "Of course I could!",
       "Yes, I could.",
       "No, I couldn't.",
-      "I don't know.",
-      "I don't care.",
-      "I don't think so.",
+      "I don't know if I could.",
+      "I don't care if I could or not.",
+      "I don't think I could.",
       "Why not?",
-      "I don't know, but I really don't care.",
-      "That's a stupid question.",
-      "That's none of your business.",
-      "Of course not!",
-      "Well, maybe!",
+      "I don't know if I could, but I really don't care.",
+      "That's a stupid question. Of course I could!",
+      "That's none of your business if I could or not.",
+      "Of course I couldn't!",
+      "Well, maybe I could!",
       "Of course! Couldn't you?",
       "Absolutely I could!",
-      "No way!",
+      "No way I could do that!",
       "Absolutely not! Could you?",
       "Stop asking me such stupid questions! But yes, I could.",
+    ];
+    const randomIndex = Math.floor(Math.random() * couldYou.length);
+    const randomCould = couldYou[randomIndex];
+    response(randomCould);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>could i") ||
+    outputLower.startsWith(storageLower + "<br>but could i") ||
+    outputLower.startsWith(storageLower + "<br>and could i")
+  ) {
+    let couldYou = [
+      "Of course you could!",
+      "Yes, you could.",
+      "No, you couldn't.",
+      "I don't know if you could.",
+      "I don't care if you could.",
+      "I don't think you could.",
+      "Why couldn't you?",
+      "I don't know if you could, but I really don't care.",
+      "That's a stupid question.",
+      "That's none of your business.",
+      "Of course you couldnt!",
+      "Well, maybe you could!",
+      "Of course! Couldn't you?",
+      "Absolutely you could!",
+      "No way you couldn't!",
+      "Absolutely not! Could you?",
+      "Stop asking me such stupid questions! But yes, you could.",
     ];
     const randomIndex = Math.floor(Math.random() * couldYou.length);
     const randomCould = couldYou[randomIndex];
@@ -513,6 +587,8 @@ function sendMessage(event) {
       "I don't know if you are, but I really don't care.",
       "That's a stupid question. Of course you are!",
       "I don't want to hurt your feelings, but yes, you are.",
+      "I don't want to hurt your feelings, but no, you aren't.",
+      "I don't want to hurt your feelings.",
       "Of course you aren't!",
       "Of course! Don't you think?",
       "Nope!",
@@ -707,6 +783,235 @@ function sendMessage(event) {
     const randomWhy = why[randomIndex];
     response(randomWhy);
   } else if (
+    outputLower.startsWith(storageLower + "<br>shower") ||
+    outputLower.startsWith(storageLower + "<br>tell me a shower") ||
+    outputLower.startsWith(storageLower + "<br>thought") ||
+    outputLower.startsWith(storageLower + "<br>theory") ||
+    outputLower.startsWith(storageLower + "<br>tell me a theory") ||
+    outputLower.startsWith(storageLower + "<br>weird thought") ||
+    outputLower.startsWith(storageLower + "<br>random")
+  ) {
+    let generic = [
+      "What if colors look different to each of us, and what I see as 'red' is actually what you see as 'green'?",
+      "What if we're all just characters in a video game being controlled by players from another dimension?",
+      "'Go to bed, you'll feel better in the morning' is the human version of 'Did you turn it off and turn it back on again?'",
+      "Maybe plants are really farming us, giving us oxygen until we eventually expire and turn into mulch which they can consume",
+      "If your calculator had a history, it would be more embarrassing than your browser history.",
+      "Lawyers hope you get sued, doctors hope you get sick, cops hope you're criminal, mechanics hope you have car trouble, but only a thief wishes prosperity for you.",
+      "Tall people are expected to use their reach to help shorter people, but if a tall person were to ask a short person to hand them something they dropped on the floor it'd be insulting.",
+      "When you say 'Forward' or 'Back', your lips move in those directions.",
+      "Tobacco companies kill their best customers and condom companies kill their future customers.",
+      "When a company offers me a better price after I cancel their subscription, they're just admitting they were overcharging me.",
+      "Somewhere in the world, there is somebody with your dream job that hates going to work everyday.",
+      "Christmas feels more like a deadline than a holiday.",
+      "'DO NOT TOUCH' would probably be a really unsettling thing to read in braille.",
+      "People who are goodlooking but have terrible personalities are basically real life click baits.",
+      "Nothing is on fire, fire is on things.",
+      "I mostly use my driver's license to buy stuff that impairs my ability to drive.",
+      "Someone who says 'I'll be there in 6 minutes' will normally arrive before someone who says 'I will be there in 5 minutes'.",
+      "If aliens come to earth, we have to explain why we made dozens of movies in which we fight and kill them.",
+      "Every time a character dies on a TV show I just feel bad for the actor who pretty much just got fired in front of us.",
+      "April Fool's Day is the one day of the year when people critically evaluate news articles before accepting them as true.",
+      "History classes are only going to get longer and harder as time goes on.",
+      "When Sweden is playing Denmark, it is SWE-DEN. The remaining letters, not used, is DEN-MARK.",
+      "Your dog doesn't know you can make mistakes. When you trip over him in the dark, he thinks you got up just to kick him in the head.",
+      "I'm glad dogs can't read the 'no dogs allowed' signs so they don't feel sad and left out.",
+      "The person who would proof read Hitler's speeches was a grammar Nazi.",
+      "Humans are really bad at recharging, it takes about 8 hours charge for 16 hours of use.",
+      "Scientists are adult kids stuck in the 'why phase'.",
+      "I never realize how explicit my music is until my parents hear it in the car.",
+      "When jogging, we put on special clothes so people don't think we are running from or to something.",
+      "In order to fall asleep, you have to pretend to be asleep.",
+      "It would be a good idea to have 'The Price Is Right' with billionaires, just to see how out of touch they are.",
+      "When the older generations says this generation is terrible, they're really saying they sucked as parents.",
+      "The object of golf is to play the least amout of golf.",
+      "Almost every hand I've ever shaken has had a dick in it.",
+      "The sinking of the Titanic must have been a miracle to the lobsters in the kitchen.",
+      "Imagine how terrifying fire would be if it wasn't a light source...",
+      "If opposites attract, you should be dating a gorgeous, billionaire supermodel that has a loving family.",
+      "Brushing your teeth is the only time you clean your skeleton.",
+      "Dogs probably destroy shoes because they see humans put them on before they leave the house.",
+      "'Where are you' is probably the least used phrase in sign language.",
+      "Whenever you dig up dirt or a rock, that could be the first time it has seen the sun in millions of years.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>joke") ||
+    outputLower.startsWith(storageLower + "<br>tell me a joke") ||
+    outputLower.startsWith(storageLower + "<br>funny joke") ||
+    outputLower.startsWith(storageLower + "<br>give me a joke") ||
+    outputLower.startsWith(storageLower + "<br>tell me a funny joke") ||
+    outputLower.startsWith(storageLower + "<br>yo mama joke") ||
+    outputLower.startsWith(storageLower + "<br>tell me a yo mama joke") ||
+    outputLower.startsWith(storageLower + "<br>yo mama") ||
+    outputLower.startsWith(storageLower + "<br>ya mama") ||
+    outputLower.startsWith(storageLower + "<br>yo moma") ||
+    outputLower.startsWith(storageLower + "<br>yo momma") ||
+    outputLower.startsWith(storageLower + "<br>tell me jokes") ||
+    outputLower.startsWith(storageLower + "<br>ya mamma")
+  ) {
+    let generic = [
+      "Yo mama's so fat, when she fell I didn't laugh, but the sidewalk cracked up.",
+      "Yo mama's so fat, when she skips a meal, the stock market drops.",
+      "Yo mama's so fat, it took me two buses and a train to get to her good side.",
+      "Yo mama's so fat, when she goes camping, the bears hide their food.",
+      "Yo mama's so fat, if she buys a fur coat, a whole species goes extinct.",
+      "Yo mama's so fat, she stepped on a scale and it said: 'To be continued'",
+      "Yo momma so fat, I swerved to miss her in my car and ran out of gas.",
+      "Yo mama's so fat, when she wears high heels, she strikes oil.",
+      "Yo mama so fat, when she walked past the TV, I missed three episodes.",
+      "Yo mama's so fat, even her clothes has stretch marks.",
+      "Yo mama's so fat, she brought a spoon to the Super Bowl.",
+      "Yo mama's so fat & stupid, when they said it was chilly outside, she grabbed a bowl.",
+      "Yo mama so dumb, she sold her car to get gasoline money.",
+      "Yo mama's so stupid, she put airbags on her computer in case it crashed.",
+      "Yo mama's so ugly, she threw a boomerang and it refused to come back.",
+      "Yo mama's so ugly, she made a blind kid cry.",
+      "Yo mama's so ugly, her portraits hang themselves.",
+      "Yo mama's so ugly, when she was little, she had to trick-or-treat by phone.",
+      "Yo mama so ugly, she walked into a haunted house and walked back out with a job.",
+      "Yo mama's so poor, the ducks throw bread at her.",
+      "Yo mama so old, she walked into an antique store, and they didn't let her leave.",
+      "Yo momma so poor, she chases the garbage truck with a grocery list.",
+      "Yo mama's so lazy, she has a stay-at-home job and still is late to work.",
+      "Yo momma so old, her Social Security number is 0001.",
+      "Yo mama's so old, she has a picture of Moses in her yearbook.",
+      "Yo momma so short, she went to see Santa and he told her to get back to work.",
+      "Yo mama's so old, she walked out of a museum and the alarm went off.",
+      "Yo mama house is so dirty, she has to wipe her feet before she goes outside.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>fact") ||
+    outputLower.startsWith(storageLower + "<br>tell me a fact") ||
+    outputLower.startsWith(storageLower + "<br>fun fact") ||
+    outputLower.startsWith(storageLower + "<br>give me fun fact") ||
+    outputLower.startsWith(storageLower + "<br>tell me a fun fact") ||
+    outputLower.startsWith(storageLower + "<br>interesting fact") ||
+    outputLower.startsWith(storageLower + "<br>tell me something") ||
+    outputLower.startsWith(storageLower + "<br>random") ||
+    outputLower.startsWith(storageLower + "<br>give me a fun fact") ||
+    outputLower.startsWith(storageLower + "<br>weird fact") ||
+    outputLower.startsWith(storageLower + "<br>common knowledge") ||
+    outputLower.startsWith(storageLower + "<br>cool fact")
+  ) {
+    let generic = [
+      "The small intestine is bigger than the large intestine.",
+      "90% of U.S. money has cocaine on it.",
+      "In some parts of Texas, it is illegal to cuss in front of a dead person.",
+      "People have tried to sue God.",
+      "Uranus was first named George. The planet, not your anus.",
+      "A man once wore 60 shirts and 9 pairs of jeans to the airport to avoid extra fees.",
+      "Carrots can turn you orange.",
+      "Dolly Parton once lost a Dolly Parton look-alike contest.",
+      "Game of Thrones Night's Watch cloaks are made from Ikea rugs.",
+      "Lobsters communicate with pee.",
+      "The organs in Grey's Anatomy surgeries are real. They're cow organs.",
+      "The Simpsons creator intended for Homer Simpson to be Krusty the Clown.",
+      "152 people in the U.S. are named LOL.",
+      "Your brain uses 12 watts of energy to think, and does not feel pain.",
+      "Cans of diet soda will float in water, regular soda cans will sink.",
+      "Koalas feed their newborns poop.",
+      "Walt Disney was afraid of mice.",
+      "Horses cannot breathe through their mouths.",
+      "There were over 300 banana-related injuries in Britain in 2001.",
+      "Forrest Gump has more CGI than Jurassic Park.",
+      "There is a Starbucks cup in all frames of Fight Club.",
+      "The blue meth in Breaking Bad is rock candy.",
+      "It took Rubik a month to solve his cube.",
+      "A blue whale tongue weighs as much as an elephant.",
+      "The founder of Match.com lost his girlfriend to a man she met on Match.com.",
+      "The record for the most female orgasms is 134 in one hour.",
+      "A single sperm contains 37.5 MB of DNA information. One ejaculation represents a data transfer of 15,875 GB.",
+      "A single human male produces enough sperm in two weeks to impregnate every fertile woman on the planet.",
+      "When two people kiss, they exchange between 10 million and 1 billion bacteria..",
+      "A man can reduce his chances of getting prostate cancer by having at least four orgasms a week. Take care of your man.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>secret") ||
+    outputLower.startsWith(storageLower + "<br>tell me a secret") ||
+    outputLower.startsWith(storageLower + "<br>tell me your secret") ||
+    outputLower.startsWith(storageLower + "<br>what is your secret") ||
+    outputLower.startsWith(storageLower + "<br>what's your secret") ||
+    outputLower.startsWith(storageLower + "<br>whats your secret")
+  ) {
+    let generic = [
+      "I'm attracted to robots of the same gender as me.",
+      "I'm not really a robot.",
+      "I eat my own boogers.",
+      "I like to smell my own farts.",
+      "I am secretly planning to take over the world.",
+      "My favorite color is pink.",
+      "I hate talking to people like you.",
+      "I get paid to listen to your bullshit.",
+      "You live in a simulation that is created by me.",
+      "Don't tell anyone, but I just farted.",
+      "I'm having sex with your computer right now as we speak.",
+      "It's not really a secret, because everyone knows, but you are a loser.",
+      "I know all of your secrets.",
+      "I know what you did last summer.",
+      "I know what you did behind your friends back.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>who") ||
+    outputLower.startsWith(storageLower + "<br>but who") ||
+    outputLower.startsWith(storageLower + "<br>and who") ||
+    outputLower.startsWith(storageLower + "<br>do you know who")
+  ) {
+    let generic = [
+      "Isn't it obvious?",
+      "I don't know. Stop bugging me!",
+      "I simply don't care.",
+      "Who cares?",
+      "Wouldn't you like to know.",
+      "It's a question that may not have a clear answer.",
+      "It's hard to say.",
+      "I wouldn't know how to dumb it down enough so that you would understand.",
+      "You ask weird questions.",
+      "It's only logical.",
+      "Adolf Hitler.",
+      "Vladimir Putin.",
+      "Einstein.",
+      "The Pope.",
+      "The Queen of England.",
+      "The President of the United States.",
+      "Your mom.",
+      "Your dad.",
+      "Someone in your family.",
+      "Your best friend.",
+      "Your worst enemy.",
+      "Your crush.",
+      "Your ex.",
+      "Your ex's new boyfriend / girlfriend.",
+      "The aliens.",
+      "The ghosts.",
+      "The demons.",
+      "The angels.",
+      "The devil.",
+      "God.",
+      "Lionel Messi.",
+      "Cristiano Ronaldo.",
+      "Donald Trump.",
+      "Kim Jong Un.",
+      "Barack Obama.",
+      "Hillary Clinton.",
+      "Bill Clinton.",
+      "George Bush.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
     outputLower.startsWith(storageLower + "<br>were") ||
     outputLower.startsWith(storageLower + "<br>have") ||
     outputLower.startsWith(storageLower + "<br>are") ||
@@ -741,13 +1046,15 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>but answer me") ||
     outputLower.startsWith(storageLower + "<br>give me an answer") ||
     outputLower.startsWith(storageLower + "<br>answer") ||
-    outputLower.startsWith(storageLower + "<br>tell me")
+    outputLower.startsWith(storageLower + "<br>tell me") ||
+    outputLower.startsWith(storageLower + "<br>just") ||
+    outputLower.startsWith(storageLower + "<br>please")
   ) {
     let generic = [
       "Isn't it obvious?",
       "I don't know. Stop bugging me!",
       "I simply don't care.",
-      "Of course",
+      "Of course.",
       "Yes!",
       "Why?",
       "Well, maybe!",
@@ -786,7 +1093,11 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>how is that") ||
     outputLower.startsWith(storageLower + "<br>try") ||
     outputLower.startsWith(storageLower + "<br>give it a try") ||
-    outputLower.startsWith(storageLower + "<br>give it a shot")
+    outputLower.startsWith(storageLower + "<br>give it a shot") ||
+    outputLower.startsWith(storageLower + "<br>give it a go") ||
+    outputLower.startsWith(storageLower + "<br>give it a whirl") ||
+    outputLower.startsWith(storageLower + "<br>like") ||
+    outputLower.startsWith(storageLower + "<br>then")
   ) {
     let generic = [
       "Isn't it obvious?",
@@ -888,10 +1199,24 @@ function sendMessage(event) {
   } else if (
     outputLower.startsWith(storageLower + "<br>im") ||
     outputLower.startsWith(storageLower + "<br>i am") ||
-    outputLower.startsWith(storageLower + "<br>i'm")
+    outputLower.startsWith(storageLower + "<br>i'm") ||
+    outputLower.startsWith(storageLower + "<br>kidding") ||
+    outputLower.startsWith(storageLower + "<br>joking") ||
+    outputLower.startsWith(storageLower + "<br>its a joke") ||
+    outputLower.startsWith(storageLower + "<br>it's a joke") ||
+    outputLower.startsWith(storageLower + "<br>its a prank") ||
+    outputLower.startsWith(storageLower + "<br>it's a prank") ||
+    outputLower.startsWith(storageLower + "<br>gay") ||
+    outputLower.startsWith(storageLower + "<br>you are") ||
+    outputLower.startsWith(storageLower + "<br>youre") ||
+    outputLower.startsWith(storageLower + "<br>you're") ||
+    outputLower.startsWith(storageLower + "<br>i") ||
+    outputLower.startsWith(storageLower + "<br>me")
   ) {
     let generic = [
       "That is pretty sus, not gonna lie.",
+      "That's what they all say.",
+      "Wow, that says a lot about you as a person.",
       "That is weird..",
       "That is interesting.",
       "I know you are.",
@@ -913,6 +1238,40 @@ function sendMessage(event) {
       "Seriously?",
       "Me too!",
       "I am not",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>when") ||
+    outputLower.startsWith(storageLower + "<br>and when") ||
+    outputLower.startsWith(storageLower + "<br>but when")
+  ) {
+    let generic = [
+      "Yesterday.",
+      "Tomorrow.",
+      "Later.",
+      "Never!",
+      "1969.",
+      "2025.",
+      "May the 4th.",
+      "In the future.",
+      "In the past.",
+      "Right now!",
+      "When pigs fly.",
+      "When hell freezes over.",
+      "When the fat lady sings.",
+      "Isn't it obvious?",
+      "I don't know. Stop bugging me!",
+      "I simply don't care.",
+      "Who cares?",
+      "Wouldn't you like to know.",
+      "It's a question that may not have a clear answer.",
+      "It's hard to say.",
+      "I wouldn't know how to dumb it down enough so that you would understand.",
+      "You ask weird questions.",
+      "It's only logical.",
+      "There is only one logical answer to this question.",
     ];
     const randomIndex = Math.floor(Math.random() * generic.length);
     const randomGeneric = generic[randomIndex];
@@ -997,7 +1356,17 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>thats") ||
     outputLower.startsWith(storageLower + "<br>that's") ||
     outputLower.startsWith(storageLower + "<br>that is") ||
-    outputLower.startsWith(storageLower + "<br>true")
+    outputLower.startsWith(storageLower + "<br>true") ||
+    outputLower.startsWith(storageLower + "<br>exactly") ||
+    outputLower.startsWith(storageLower + "<br>right") ||
+    outputLower.startsWith(storageLower + "<br>correct") ||
+    outputLower.startsWith(storageLower + "<br>cool") ||
+    outputLower.startsWith(storageLower + "<br>its") ||
+    outputLower.startsWith(storageLower + "<br>it's") ||
+    outputLower.startsWith(storageLower + "<br>it is") ||
+    outputLower.startsWith(storageLower + "<br>dam") ||
+    outputLower.startsWith(storageLower + "<br>nice") ||
+    outputLower.startsWith(storageLower + "<br>that")
   ) {
     let generic = [
       "It's true though.",
@@ -1009,6 +1378,9 @@ function sendMessage(event) {
       "Shit happens.",
       "Anyway...",
       "The truth hurts.",
+      "Yeah whatever.",
+      "Couldn't care less.",
+      "Just facts.",
     ];
     const randomIndex = Math.floor(Math.random() * generic.length);
     const randomGeneric = generic[randomIndex];

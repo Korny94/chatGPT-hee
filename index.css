@@ -215,3 +215,6 @@ li {
 .darkMode {
   padding-bottom: 2.5rem;
 }
+
+@media (max-width: 950px) {
+}
