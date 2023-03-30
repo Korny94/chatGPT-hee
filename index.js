@@ -2203,6 +2203,7 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>it's a prank") ||
     outputLower.startsWith(storageLower + "<br>gay") ||
     outputLower.startsWith(storageLower + "<br>you are") ||
+    outputLower.startsWith(storageLower + "<br>you") ||
     outputLower.startsWith(storageLower + "<br>youre") ||
     outputLower.startsWith(storageLower + "<br>you're") ||
     outputLower.startsWith(storageLower + "<br>i") ||
@@ -2360,7 +2361,10 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>it is") ||
     outputLower.startsWith(storageLower + "<br>dam") ||
     outputLower.startsWith(storageLower + "<br>nice") ||
-    outputLower.startsWith(storageLower + "<br>that")
+    outputLower.startsWith(storageLower + "<br>that") ||
+    outputLower.startsWith(storageLower + "<br>je") ||
+    outputLower.startsWith(storageLower + "<br>sorry") ||
+    outputLower.startsWith(storageLower + "<br>ge")
   ) {
     let generic = [
       "It's true though.",
