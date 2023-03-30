@@ -1375,7 +1375,11 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>ass") ||
     outputLower.startsWith(storageLower + "<br>dumb") ||
     outputLower.startsWith(storageLower + "<br>dick") ||
-    outputLower.startsWith(storageLower + "<br>douch")
+    outputLower.startsWith(storageLower + "<br>douch") ||
+    outputLower.startsWith(storageLower + "<br>useless") ||
+    outputLower.startsWith(storageLower + "<br>youre useless") ||
+    outputLower.startsWith(storageLower + "<br>you are useless") ||
+    outputLower.startsWith(storageLower + "<br>you're useless")
   ) {
     let insult = [
       "Fuck you!",
@@ -1754,9 +1758,7 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>yeah but why") ||
     outputLower.startsWith(storageLower + "<br>yea but why") ||
     outputLower.startsWith(storageLower + "<br>and") ||
-    outputLower.startsWith(storageLower + "<br>and that is") ||
-    outputLower.startsWith(storageLower + "<br>because?") ||
-    outputLower.startsWith(storageLower + "<br>because")
+    outputLower.startsWith(storageLower + "<br>and that is")
   ) {
     let why = [
       "Isn't it obvious?",
@@ -2216,7 +2218,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>youre") ||
     outputLower.startsWith(storageLower + "<br>you're") ||
     outputLower.startsWith(storageLower + "<br>i") ||
-    outputLower.startsWith(storageLower + "<br>me")
+    outputLower.startsWith(storageLower + "<br>me") ||
+    outputLower.startsWith(storageLower + "<br>because")
   ) {
     let generic = [
       "That is pretty sus, not gonna lie.",
@@ -2233,7 +2236,7 @@ function sendMessage(event) {
       "Haha, good one.",
       "You should be on 'Stranger things'.",
       "Yeah, maybe!",
-      "That's pretty obvious?",
+      "That's pretty obvious",
       "Well duh..",
       "Did I ask?",
       "Who cares?",
