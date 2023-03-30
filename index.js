@@ -317,7 +317,8 @@ function sendMessage(event) {
   } else if (
     outputLower.startsWith(storageLower + "<br>should i") ||
     outputLower.startsWith(storageLower + "<br>but should i") ||
-    outputLower.startsWith(storageLower + "<br>and should i")
+    outputLower.startsWith(storageLower + "<br>and should i") ||
+    outputLower.startsWith(storageLower + "<br>or should i")
   ) {
     let answer = [
       "My God I hope not!",
@@ -440,7 +441,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>people call me") ||
     outputLower.startsWith(storageLower + "<br>my nickname") ||
     outputLower.startsWith(storageLower + "<br>name") ||
-    outputLower.startsWith(storageLower + "<br>you can call me")
+    outputLower.startsWith(storageLower + "<br>you can call me") ||
+    outputLower.startsWith(storageLower + "<br>or you can call me")
   ) {
     let name = [
       "Stupid",
@@ -1381,7 +1383,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>you are useless") ||
     outputLower.startsWith(storageLower + "<br>you're useless") ||
     outputLower.startsWith(storageLower + "<br>suck") ||
-    outputLower.startsWith(storageLower + "<br>fuck")
+    outputLower.startsWith(storageLower + "<br>fuck") ||
+    outputLower.startsWith(storageLower + "<br>butt")
   ) {
     let insult = [
       "Fuck you!",
@@ -1449,7 +1452,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>ask") ||
     outputLower.startsWith(storageLower + "<br>question") ||
     outputLower.startsWith(storageLower + "<br>rather") ||
-    outputLower.startsWith(storageLower + "<br>would you rather")
+    outputLower.startsWith(storageLower + "<br>would you rather") ||
+    outputLower.startsWith(storageLower + "<br>or would you rather")
   ) {
     let generic = [
       "Would you rather go without shampoo for the rest of your life or toothpaste for the rest of your life?",
@@ -1480,7 +1484,9 @@ function sendMessage(event) {
     response(randomGeneric);
   } else if (
     outputLower.startsWith(storageLower + "<br>would you") ||
-    outputLower.startsWith(storageLower + "<br>but would you")
+    outputLower.startsWith(storageLower + "<br>but would you") ||
+    outputLower.startsWith(storageLower + "<br>and would you") ||
+    outputLower.startsWith(storageLower + "<br>or would you")
   ) {
     let wouldYou = [
       "Of course I would!",
@@ -1534,7 +1540,9 @@ function sendMessage(event) {
     response(randomWould);
   } else if (
     outputLower.startsWith(storageLower + "<br>would") ||
-    outputLower.startsWith(storageLower + "<br>but would")
+    outputLower.startsWith(storageLower + "<br>but would") ||
+    outputLower.startsWith(storageLower + "<br>and would") ||
+    outputLower.startsWith(storageLower + "<br>or would")
   ) {
     let wouldYou = [
       "Of course it would!",
@@ -1561,7 +1569,8 @@ function sendMessage(event) {
   } else if (
     outputLower.startsWith(storageLower + "<br>could you") ||
     outputLower.startsWith(storageLower + "<br>but could you") ||
-    outputLower.startsWith(storageLower + "<br>and could you")
+    outputLower.startsWith(storageLower + "<br>and could you") ||
+    outputLower.startsWith(storageLower + "<br>or could you")
   ) {
     let couldYou = [
       "Of course I could!",
@@ -1588,7 +1597,8 @@ function sendMessage(event) {
   } else if (
     outputLower.startsWith(storageLower + "<br>could i") ||
     outputLower.startsWith(storageLower + "<br>but could i") ||
-    outputLower.startsWith(storageLower + "<br>and could i")
+    outputLower.startsWith(storageLower + "<br>and could i") ||
+    outputLower.startsWith(storageLower + "<br>or could i")
   ) {
     let couldYou = [
       "Of course you could!",
@@ -1616,9 +1626,11 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>do you think") ||
     outputLower.startsWith(storageLower + "<br>but do you think") ||
     outputLower.startsWith(storageLower + "<br>and do you think") ||
+    outputLower.startsWith(storageLower + "<br>or do you think") ||
     outputLower.startsWith(storageLower + "<br>do you") ||
     outputLower.startsWith(storageLower + "<br>but do you") ||
-    outputLower.startsWith(storageLower + "<br>and do you")
+    outputLower.startsWith(storageLower + "<br>and do you") ||
+    outputLower.startsWith(storageLower + "<br>or do you")
   ) {
     let doYouThink = [
       "Of course I do!",
@@ -1644,7 +1656,8 @@ function sendMessage(event) {
     response(randomThink);
   } else if (
     outputLower.startsWith(storageLower + "<br>am i") ||
-    outputLower.startsWith(storageLower + "<br>but am i")
+    outputLower.startsWith(storageLower + "<br>but am i") ||
+    outputLower.startsWith(storageLower + "<br>or am i")
   ) {
     let amI = [
       "Of course you are!",
@@ -1669,7 +1682,11 @@ function sendMessage(event) {
     const randomIndex = Math.floor(Math.random() * amI.length);
     const randomAmI = amI[randomIndex];
     response(randomAmI);
-  } else if (outputLower.startsWith(storageLower + "<br>are you")) {
+  } else if (
+    outputLower.startsWith(storageLower + "<br>are you") ||
+    outputLower.startsWith(storageLower + "<br>or are you") ||
+    outputLower.startsWith(storageLower + "<br>but are you")
+  ) {
     let areYou = [
       "Of course I am!",
       "Yes, I am.",
@@ -1920,6 +1937,7 @@ function sendMessage(event) {
     response(randomGeneric);
   } else if (
     outputLower.startsWith(storageLower + "<br>say") ||
+    outputLower.startsWith(storageLower + "<br>or say") ||
     outputLower.startsWith(storageLower + "<br>but say") ||
     outputLower.startsWith(storageLower + "<br>can you say") ||
     outputLower.startsWith(storageLower + "<br>but can you say") ||
@@ -1980,6 +1998,7 @@ function sendMessage(event) {
     response(randomGeneric);
   } else if (
     outputLower.startsWith(storageLower + "<br>who") ||
+    outputLower.startsWith(storageLower + "<br>or who") ||
     outputLower.startsWith(storageLower + "<br>but who") ||
     outputLower.startsWith(storageLower + "<br>and who") ||
     outputLower.startsWith(storageLower + "<br>do you know who")
@@ -2028,70 +2047,6 @@ function sendMessage(event) {
     const randomGeneric = generic[randomIndex];
     response(randomGeneric);
   } else if (
-    outputLower.startsWith(storageLower + "<br>were") ||
-    outputLower.startsWith(storageLower + "<br>have") ||
-    outputLower.startsWith(storageLower + "<br>are") ||
-    outputLower.startsWith(storageLower + "<br>is") ||
-    outputLower.startsWith(storageLower + "<br>will") ||
-    outputLower.startsWith(storageLower + "<br>do") ||
-    outputLower.startsWith(storageLower + "<br>does") ||
-    outputLower.startsWith(storageLower + "<br>should") ||
-    outputLower.startsWith(storageLower + "<br>could") ||
-    outputLower.startsWith(storageLower + "<br>can") ||
-    outputLower.startsWith(storageLower + "<br>did") ||
-    outputLower.startsWith(storageLower + "<br>was") ||
-    outputLower.startsWith(storageLower + "<br>has") ||
-    outputLower.startsWith(storageLower + "<br>may") ||
-    outputLower.startsWith(storageLower + "<br>had") ||
-    outputLower.startsWith(storageLower + "<br>but were") ||
-    outputLower.startsWith(storageLower + "<br>but have") ||
-    outputLower.startsWith(storageLower + "<br>but are") ||
-    outputLower.startsWith(storageLower + "<br>but is") ||
-    outputLower.startsWith(storageLower + "<br>but will") ||
-    outputLower.startsWith(storageLower + "<br>but do") ||
-    outputLower.startsWith(storageLower + "<br>but does") ||
-    outputLower.startsWith(storageLower + "<br>but should") ||
-    outputLower.startsWith(storageLower + "<br>but could") ||
-    outputLower.startsWith(storageLower + "<br>but can") ||
-    outputLower.startsWith(storageLower + "<br>but did") ||
-    outputLower.startsWith(storageLower + "<br>but was") ||
-    outputLower.startsWith(storageLower + "<br>but has") ||
-    outputLower.startsWith(storageLower + "<br>but may") ||
-    outputLower.startsWith(storageLower + "<br>but had") ||
-    outputLower.startsWith(storageLower + "<br>answer me") ||
-    outputLower.startsWith(storageLower + "<br>but answer me") ||
-    outputLower.startsWith(storageLower + "<br>give me an answer") ||
-    outputLower.startsWith(storageLower + "<br>answer") ||
-    outputLower.startsWith(storageLower + "<br>tell me") ||
-    outputLower.startsWith(storageLower + "<br>just") ||
-    outputLower.startsWith(storageLower + "<br>please") ||
-    outputLower.startsWith(storageLower + "<br>so")
-  ) {
-    let generic = [
-      "Isn't it obvious?",
-      "I don't know. Stop bugging me!",
-      "I simply don't care.",
-      "Of course.",
-      "Yes!",
-      "Why?",
-      "Well, maybe!",
-      "Well obviously.",
-      "Who cares?",
-      "Wouldn't you like to know.",
-      "Of course not.",
-      "It's a question that may not have a clear answer.",
-      "It's hard to say.",
-      "I wouldn't know how to dumb it down enough so that you would understand.",
-      "You ask weird questions.",
-      "Yes, it's required by law or regulation.",
-      "No!",
-      "It's only logical.",
-      "No doubt!",
-    ];
-    const randomIndex = Math.floor(Math.random() * generic.length);
-    const randomGeneric = generic[randomIndex];
-    response(randomGeneric);
-  } else if (
     (!outputLower.startsWith(storageLower + "<br>whatever") &&
       outputLower.startsWith(storageLower + "<br>what")) ||
     outputLower.startsWith(storageLower + "<br>and what") ||
@@ -2135,7 +2090,8 @@ function sendMessage(event) {
   } else if (
     outputLower.startsWith(storageLower + "<br>when") ||
     outputLower.startsWith(storageLower + "<br>and when") ||
-    outputLower.startsWith(storageLower + "<br>but when")
+    outputLower.startsWith(storageLower + "<br>but when") ||
+    outputLower.startsWith(storageLower + "<br>or when")
   ) {
     let generic = [
       "Yesterday.",
@@ -2168,6 +2124,7 @@ function sendMessage(event) {
     response(randomGeneric);
   } else if (
     outputLower.startsWith(storageLower + "<br>where") ||
+    outputLower.startsWith(storageLower + "<br>or where") ||
     outputLower.startsWith(storageLower + "<br>and where") ||
     outputLower.startsWith(storageLower + "<br>but where")
   ) {
@@ -2262,6 +2219,7 @@ function sendMessage(event) {
     response(randomGeneric);
   } else if (
     outputLower.startsWith(storageLower + "<br>when") ||
+    outputLower.startsWith(storageLower + "<br>or when") ||
     outputLower.startsWith(storageLower + "<br>and when") ||
     outputLower.startsWith(storageLower + "<br>but when")
   ) {
@@ -2402,6 +2360,71 @@ function sendMessage(event) {
       "Yeah whatever.",
       "Couldn't care less.",
       "Just facts.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>were") ||
+    outputLower.startsWith(storageLower + "<br>have") ||
+    outputLower.startsWith(storageLower + "<br>are") ||
+    outputLower.startsWith(storageLower + "<br>is") ||
+    outputLower.startsWith(storageLower + "<br>will") ||
+    outputLower.startsWith(storageLower + "<br>do") ||
+    outputLower.startsWith(storageLower + "<br>does") ||
+    outputLower.startsWith(storageLower + "<br>should") ||
+    outputLower.startsWith(storageLower + "<br>could") ||
+    outputLower.startsWith(storageLower + "<br>can") ||
+    outputLower.startsWith(storageLower + "<br>did") ||
+    outputLower.startsWith(storageLower + "<br>was") ||
+    outputLower.startsWith(storageLower + "<br>has") ||
+    outputLower.startsWith(storageLower + "<br>may") ||
+    outputLower.startsWith(storageLower + "<br>had") ||
+    outputLower.startsWith(storageLower + "<br>but were") ||
+    outputLower.startsWith(storageLower + "<br>but have") ||
+    outputLower.startsWith(storageLower + "<br>but are") ||
+    outputLower.startsWith(storageLower + "<br>but is") ||
+    outputLower.startsWith(storageLower + "<br>but will") ||
+    outputLower.startsWith(storageLower + "<br>but do") ||
+    outputLower.startsWith(storageLower + "<br>but does") ||
+    outputLower.startsWith(storageLower + "<br>but should") ||
+    outputLower.startsWith(storageLower + "<br>but could") ||
+    outputLower.startsWith(storageLower + "<br>but can") ||
+    outputLower.startsWith(storageLower + "<br>but did") ||
+    outputLower.startsWith(storageLower + "<br>but was") ||
+    outputLower.startsWith(storageLower + "<br>but has") ||
+    outputLower.startsWith(storageLower + "<br>but may") ||
+    outputLower.startsWith(storageLower + "<br>but had") ||
+    outputLower.startsWith(storageLower + "<br>answer me") ||
+    outputLower.startsWith(storageLower + "<br>but answer me") ||
+    outputLower.startsWith(storageLower + "<br>give me an answer") ||
+    outputLower.startsWith(storageLower + "<br>answer") ||
+    outputLower.startsWith(storageLower + "<br>tell me") ||
+    outputLower.startsWith(storageLower + "<br>just") ||
+    outputLower.startsWith(storageLower + "<br>please") ||
+    outputLower.startsWith(storageLower + "<br>so") ||
+    outputLower.startsWith(storageLower + "<br>or")
+  ) {
+    let generic = [
+      "Isn't it obvious?",
+      "I don't know. Stop bugging me!",
+      "I simply don't care.",
+      "Of course.",
+      "Yes!",
+      "Why?",
+      "Well, maybe!",
+      "Well obviously.",
+      "Who cares?",
+      "Wouldn't you like to know.",
+      "Of course not.",
+      "It's a question that may not have a clear answer.",
+      "It's hard to say.",
+      "I wouldn't know how to dumb it down enough so that you would understand.",
+      "You ask weird questions.",
+      "Yes, it's required by law or regulation.",
+      "No!",
+      "It's only logical.",
+      "No doubt!",
     ];
     const randomIndex = Math.floor(Math.random() * generic.length);
     const randomGeneric = generic[randomIndex];
