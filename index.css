@@ -225,15 +225,27 @@ li {
   }
 
   .inputText {
-    width: 60vw;
+    width: 50vw;
     margin-left: 0.5rem;
     margin-bottom: 1rem;
+    font-weight: 500;
   }
 
   .capabilities {
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .capabilities * {
     width: 80vw;
     align-items: center;
     justify-content: center;
+  }
+
+  .chatBg {
+    width: 90vw;
+    height: 15vh;
   }
 
   .whiteBg {

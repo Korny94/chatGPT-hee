@@ -26,12 +26,26 @@ const aside = document.querySelector("#aside");
 
 const menu = document.querySelector("#menu");
 
+const h1 = document.querySelector("h1");
+
+h1.onclick = function () {
+  location.reload();
+};
+
 let menuCount = 0;
 
 menu.onclick = function () {
   menuCount++;
   if (menuCount % 2 === 1) {
     aside.style.display = "block";
+    output.onclick = function () {
+      aside.style.display = "none";
+      menuCount++;
+    };
+    input.onclick = function () {
+      aside.style.display = "none";
+      menuCount++;
+    };
   } else {
     aside.style.display = "none";
   }
@@ -1213,6 +1227,7 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>asshole") ||
     outputLower.startsWith(storageLower + "<br>idiot") ||
     outputLower.startsWith(storageLower + "<br>shut up") ||
+    outputLower.startsWith(storageLower + "<br>shut") ||
     outputLower.startsWith(storageLower + "<br>fucker") ||
     outputLower.startsWith(storageLower + "<br>motherfucker") ||
     outputLower.startsWith(storageLower + "<br>assface") ||
