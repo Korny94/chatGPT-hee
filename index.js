@@ -125,6 +125,7 @@ send.onmouseleave = function () {
 let sendCount = 0;
 
 function sendMessage(event) {
+  bgSend.style.display = "";
   const key = event.key;
   let outputStorage = output.innerHTML;
 
