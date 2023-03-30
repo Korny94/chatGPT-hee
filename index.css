@@ -205,6 +205,15 @@ li {
   transform: scale(0.5);
 }
 
+.moon {
+  background-image: url(/assets/moon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 45px;
+  height: 45px;
+  margin-left: -0.1rem;
+}
+
 .clearConversation,
 .darkMode {
   margin: 1.5rem 0rem;

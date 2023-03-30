@@ -28,7 +28,7 @@ const menu = document.querySelector("#menu");
 
 const h1 = document.querySelector("h1");
 
-const chatBg = document.querySelector(".chatBg");
+const moonSun = document.querySelector("#moonSun");
 
 h1.onclick = function () {
   location.reload();
@@ -72,6 +72,7 @@ darkMode.onclick = function () {
     darkModeText.innerHTML = "Light Mode";
     body.style.backgroundColor = "#343541";
     body.style.color = "#ececf1";
+    moonSun.style.backgroundImage = "url(/assets/sun.png)";
   } else {
     for (let i = 0; i < suggestBgDiv.length; i++) {
       suggestBgDiv[i].style.backgroundColor = "#f7f7f8";
@@ -84,6 +85,7 @@ darkMode.onclick = function () {
     body.style.backgroundColor = "white";
     body.style.color = "black";
     menu.style.filter = "none";
+    moonSun.style.backgroundImage = "url(/assets/moon.png)";
   }
 };
 
