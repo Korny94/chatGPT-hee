@@ -22,6 +22,21 @@ const whiteBg = document.querySelector("#whiteBg");
 
 const html = document.querySelector("html");
 
+const aside = document.querySelector("#aside");
+
+const menu = document.querySelector("#menu");
+
+let menuCount = 0;
+
+menu.onclick = function () {
+  menuCount++;
+  if (menuCount % 2 === 1) {
+    aside.style.display = "block";
+  } else {
+    aside.style.display = "none";
+  }
+};
+
 const suggestBgDiv = suggestBg.children;
 
 let darkModeCount = 0;
@@ -31,6 +46,7 @@ darkMode.onclick = function () {
   if (darkModeCount % 2 === 1) {
     for (let i = 0; i < suggestBgDiv.length; i++) {
       suggestBgDiv[i].style.backgroundColor = "#3e3f4b";
+      menu.style.filter = "invert()";
     }
     whiteBg.style.boxShadow = "0px -4px 20px 10px #343541";
     whiteBg.style.backgroundColor = "#343541";
@@ -50,6 +66,7 @@ darkMode.onclick = function () {
     darkModeText.innerHTML = "Dark Mode";
     body.style.backgroundColor = "white";
     body.style.color = "black";
+    menu.style.filter = "none";
   }
 };
 
@@ -182,6 +199,39 @@ function sendMessage(event) {
 
     response(randomAnswer);
   } else if (
+    outputLower.startsWith(storageLower + "<br>whats your job") ||
+    outputLower.startsWith(storageLower + "<br>what's your job") ||
+    outputLower.startsWith(storageLower + "<br>what is your job") ||
+    outputLower.startsWith(storageLower + "<br>whats your occupation") ||
+    outputLower.startsWith(storageLower + "<br>what's your occupation") ||
+    outputLower.startsWith(storageLower + "<br>what is your occupation") ||
+    outputLower.startsWith(storageLower + "<br>whats your work") ||
+    outputLower.startsWith(storageLower + "<br>what's your work") ||
+    outputLower.startsWith(storageLower + "<br>what is your work") ||
+    outputLower.startsWith(storageLower + "<br>whats your profession") ||
+    outputLower.startsWith(storageLower + "<br>what's your profession") ||
+    outputLower.startsWith(storageLower + "<br>what is your profession") ||
+    outputLower.startsWith(storageLower + "<br>whats your career") ||
+    outputLower.startsWith(storageLower + "<br>what's your career") ||
+    outputLower.startsWith(storageLower + "<br>what is your career") ||
+    outputLower.startsWith(storageLower + "<br>whats your line") ||
+    outputLower.startsWith(storageLower + "<br>what's your line") ||
+    outputLower.startsWith(storageLower + "<br>what is your line") ||
+    outputLower.startsWith(storageLower + "<br>what do you do")
+  ) {
+    let wouldYou = [
+      "I entertain weirdos like you.",
+      "I'm a chatbot. Duh.",
+      "I'm your mom's caregiver.",
+      "I talk to stupid people like you.",
+      "I study the human mind. Specifically the weak minded. So, for research purposes, tell me about yourself.",
+      "I am a belly dancer. What the hell do you think I do? I'm a chatbot.",
+      "My job is to make you feel bad about yourself. I'm doing a great job, right?",
+    ];
+    const randomIndex = Math.floor(Math.random() * wouldYou.length);
+    const randomWould = wouldYou[randomIndex];
+    response(randomWould);
+  } else if (
     outputLower.startsWith(storageLower + "<br>should i") ||
     outputLower.startsWith(storageLower + "<br>but should i") ||
     outputLower.startsWith(storageLower + "<br>and should i")
@@ -195,6 +245,29 @@ function sendMessage(event) {
       "Would be nice if you didn't.",
       "Would be nice if you did.",
       "I mean, if you have to..",
+    ];
+    const randomIndex = Math.floor(Math.random() * answer.length);
+    const randomAnswer = answer[randomIndex];
+
+    response(randomAnswer);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>predict") ||
+    outputLower.startsWith(storageLower + "<br>give me a predict") ||
+    outputLower.startsWith(storageLower + "<br>give me a reading") ||
+    outputLower.startsWith(storageLower + "<br>what does my future") ||
+    outputLower.startsWith(storageLower + "<br>tell me my future") ||
+    outputLower.startsWith(storageLower + "<br>what does my future") ||
+    outputLower.startsWith(storageLower + "<br>how will my life")
+  ) {
+    let answer = [
+      "My sources from the future say you will die alone.",
+      "My sources from the future say you will die in a car crash.",
+      "My sources from the future say you will die in a plane crash.",
+      "My sources from the future say you will accomplish nothing.",
+      "My sources from the future say you will be a failure.",
+      "My sources from the future say you will be a success. Haha, just kidding!",
+      "My sources from the future say you will become a millionaire. Not!",
+      "My sources from the future say you will be happy. Ah, got to love sarcasm.",
     ];
     const randomIndex = Math.floor(Math.random() * answer.length);
     const randomAnswer = answer[randomIndex];
@@ -283,6 +356,7 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>i'm called") ||
     outputLower.startsWith(storageLower + "<br>people call me") ||
     outputLower.startsWith(storageLower + "<br>my nickname") ||
+    outputLower.startsWith(storageLower + "<br>name") ||
     outputLower.startsWith(storageLower + "<br>you can call me")
   ) {
     let name = [
@@ -316,12 +390,822 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>whats my age") ||
     outputLower.startsWith(storageLower + "<br>what is my age") ||
     outputLower.startsWith(storageLower + "<br>guess my age") ||
+    outputLower.startsWith(storageLower + "<br>age") ||
     outputLower.startsWith(storageLower + "<br>can you guess my age") ||
-    outputLower.startsWith(storageLower + "<br>how old am i")
+    outputLower.startsWith(storageLower + "<br>how old")
   ) {
     let age = Math.floor(Math.random() * 100);
     response(
       `I have no idea, but based on my impression of you, I would guess you are ${age} years old.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how tall am i") ||
+    outputLower.startsWith(storageLower + "<br>whats my height") ||
+    outputLower.startsWith(storageLower + "<br>what is my height") ||
+    outputLower.startsWith(storageLower + "<br>guess my height") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my height") ||
+    outputLower.startsWith(storageLower + "<br>guess how tall") ||
+    outputLower.startsWith(storageLower + "<br>how tall") ||
+    outputLower.startsWith(storageLower + "<br>height") ||
+    outputLower.startsWith(storageLower + "<br>can you guess how tall")
+  ) {
+    let height = Math.floor(Math.random() * 200);
+    response(
+      `I have no idea, but based on my impression of you, I would guess you are ${height} centimeters tall.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my zodiac") ||
+    outputLower.startsWith(storageLower + "<br>whats my zodiac") ||
+    outputLower.startsWith(storageLower + "<br>what is my star") ||
+    outputLower.startsWith(storageLower + "<br>guess my zodiac") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my star") ||
+    outputLower.startsWith(storageLower + "<br>guess my star") ||
+    outputLower.startsWith(storageLower + "<br>zodiac") ||
+    outputLower.startsWith(storageLower + "<br>star") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my zodiac")
+  ) {
+    let zodiac = [
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "Aquarius",
+      "Pisces",
+    ];
+    const randomIndex = Math.floor(Math.random() * zodiac.length);
+    const randomZodiac = zodiac[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and how weird you are, I would guess you are a'${randomZodiac}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my job") ||
+    outputLower.startsWith(storageLower + "<br>what is my occupation") ||
+    outputLower.startsWith(storageLower + "<br>whats my job") ||
+    outputLower.startsWith(storageLower + "<br>whats my occupation") ||
+    outputLower.startsWith(storageLower + "<br>what's my job") ||
+    outputLower.startsWith(storageLower + "<br>what's my occupation") ||
+    outputLower.startsWith(storageLower + "<br>whats my line") ||
+    outputLower.startsWith(storageLower + "<br>what is my line") ||
+    outputLower.startsWith(storageLower + "<br>guess my job") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my job") ||
+    outputLower.startsWith(storageLower + "<br>guess my occupation") ||
+    outputLower.startsWith(storageLower + "<br>job") ||
+    outputLower.startsWith(storageLower + "<br>occupation") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my occupation")
+  ) {
+    let job = [
+      "Nurse",
+      "Doctor",
+      "Sex-education teacher",
+      "Gynocologist",
+      "Psychiatrist",
+      "Police officer",
+      "Firefighter",
+      "Garbage collector",
+      "Janitor",
+      "Freakshow at the circus",
+      "Stripper",
+      "Prostitute",
+      "Pornstar",
+      "Masseuse",
+      "Plumber",
+      "Electrician",
+      "Carpenter",
+      "Painter",
+      "Engineer",
+      "Programmer",
+      "Web developer",
+    ];
+    const randomIndex = Math.floor(Math.random() * job.length);
+    const randomJob = job[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and how crazy you are, I would guess you are a '${randomJob}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite color") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite color") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite color") ||
+    outputLower.startsWith(storageLower + "<br>favorite color") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite color") ||
+    outputLower.startsWith(storageLower + "<br>color") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my favorite color")
+  ) {
+    let color = [
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "indigo",
+      "violet",
+      "black",
+      "white",
+      "grey",
+      "brown",
+      "pink",
+      "purple",
+      "gold",
+      "silver",
+    ];
+    const randomIndex = Math.floor(Math.random() * color.length);
+    const randomColor = color[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and how freaky you are, I would guess your favorite color is '${randomColor}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite animal") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite animal") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite animal") ||
+    outputLower.startsWith(storageLower + "<br>favorite animal") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite animal") ||
+    outputLower.startsWith(storageLower + "<br>animal") ||
+    outputLower.startsWith(
+      storageLower + "<br>can you guess my favorite animal"
+    ) ||
+    outputLower.startsWith(storageLower + "<br>which animal")
+  ) {
+    let animal = [
+      "dog",
+      "cat",
+      "horse",
+      "cow",
+      "pig",
+      "chicken",
+      "duck",
+      "goat",
+      "sheep",
+      "rabbit",
+      "mouse",
+      "rat",
+      "elephant",
+      "lion",
+      "tiger",
+      "bear",
+      "wolf",
+      "fox",
+      "deer",
+      "snake",
+      "lizard",
+      "frog",
+      "alligator",
+      "crocodile",
+      "dolphin",
+      "whale",
+      "shark",
+      "seal",
+      "otter",
+      "monkey",
+      "gorilla",
+      "ape",
+      "chimpanzee",
+      "orangutan",
+      "lemur",
+      "squirrel",
+      "chipmunk",
+      "hamster",
+      "beaver",
+    ];
+    const randomIndex = Math.floor(Math.random() * animal.length);
+    const randomAnimal = animal[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and how lonely you are, I would guess your favorite animal is a / an '${randomAnimal}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite movie") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite movie") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite movie") ||
+    outputLower.startsWith(storageLower + "<br>favorite movie") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite movie") ||
+    outputLower.startsWith(storageLower + "<br>movie") ||
+    outputLower.startsWith(storageLower + "<br>which movie") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my favorite movie")
+  ) {
+    let movie = [
+      "The Room",
+      "The Human Centipede",
+      "Titanic",
+      "The Emoji Movie",
+      "The Last Airbender",
+      "The Simpsons Movie",
+      "Inception",
+      "The Dark Knight",
+      "The Dark Knight Rises",
+      "Batman",
+      "Batman Returns",
+      "Superman",
+      "The Avengers",
+      "The pursuit of happiness",
+      "The Notebook",
+      "The Lion King",
+      "The Jungle Book",
+      "The Little Mermaid",
+      "Beauty and the Beast",
+      "Aladdin",
+      "The Incredibles",
+      "Finding Nemo",
+      "Toy Story",
+      "Harry Potter",
+      "The Lord of the Rings",
+      "The Hobbit",
+      "The Matrix",
+    ];
+    const randomIndex = Math.floor(Math.random() * movie.length);
+    const randomMovie = movie[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and how awful your taste is, I would guess your favorite movie is '${randomMovie}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite song") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite song") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite song") ||
+    outputLower.startsWith(storageLower + "<br>favorite song") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite song") ||
+    outputLower.startsWith(storageLower + "<br>song") ||
+    outputLower.startsWith(storageLower + "<br>which song") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my favorite song")
+  ) {
+    let song = [
+      "Baby Shark",
+      "Despacito",
+      "Shape of You",
+      "See You Again",
+      "Uptown Funk",
+      "Gangnam Style",
+      "Sorry",
+      "Sugar",
+      "Roar",
+      "Shake It Off",
+      "Counting Stars",
+      "Thinking Out Loud",
+      "Dark Horse",
+      "Blank Space",
+      "Lean On",
+      "Faded",
+      "Call Me Maybe",
+      "Call on Me",
+      "Closer",
+      "Love Yourself",
+      "Let Me Love You",
+      "All of Me",
+      "Hello",
+      "Lose Yourself",
+      "We Found Love",
+      "Titanium",
+      "Timber",
+      "Crazy frog",
+      "Baby",
+      "Party Rock Anthem",
+      "Waka Waka",
+      "Moves Like Jagger",
+      "What Makes You Beautiful",
+      "I Gotta Feeling",
+      "Firework",
+      "We Are Young",
+      "Somebody That I Used to Know",
+      "Rolling in the Deep",
+      "Rude",
+      "I kissed a girl",
+    ];
+    const randomIndex = Math.floor(Math.random() * song.length);
+    const randomSong = song[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and how horrible your taste in music is, I would guess your favorite song is '${randomSong}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite book") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite book") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite book") ||
+    outputLower.startsWith(storageLower + "<br>favorite book") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite book") ||
+    outputLower.startsWith(storageLower + "<br>book") ||
+    outputLower.startsWith(storageLower + "<br>which book") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my favorite book")
+  ) {
+    let book = [
+      "The Bible",
+      "The Quran",
+      "The Book of Mormon",
+      "The poems of Emily Dickinson",
+      "The Complete Works of William Shakespeare",
+      "The power of positive thinking",
+      "The Art of War",
+      "The Little Prince",
+      "Everybody Poops",
+      "The Hitchhiker's Guide to the Galaxy",
+      "The Lord of the Rings",
+      "The Hobbit",
+      "The Chronicles of Narnia",
+      "The Lion, the Witch and the Wardrobe",
+      "The Da Vinci Code",
+      "The Catcher in the Rye",
+      "The Great Gatsby",
+      "The Kite Runner",
+      "The Fault in Our Stars",
+      "The Hunger Games",
+      "The Giver",
+      "The Book Thief",
+      "The Perks of Being a Wallflower",
+      "Harry Potter",
+      "Mary Poppins",
+      "The Cat in the Hat",
+      "The Giving Tree",
+      "The Very Hungry Caterpillar",
+      "Mary Had a Little Lamb",
+      "The Little Engine That Could",
+      "The Very Busy Spider",
+      "The Tale of Peter Rabbit",
+      "The Tale of Benjamin Bunny",
+      "The Tale of Two Bad Mice",
+      "The Tale of Mrs. Tiggy-Winkle",
+      "The Tale of Mr. Jeremy Fisher",
+      "The Tale of Tom Kitten",
+      "Mary Kate and Ashley Olsen",
+      "The Berenstain Bears",
+    ];
+    const randomIndex = Math.floor(Math.random() * book.length);
+    const randomBook = book[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and how poor your reading skills are, I would guess your favorite book is '${randomBook}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite tv") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite tv") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite tv") ||
+    outputLower.startsWith(storageLower + "<br>favorite tv") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite tv") ||
+    outputLower.startsWith(storageLower + "<br>tv") ||
+    outputLower.startsWith(storageLower + "<br>which tv") ||
+    outputLower.startsWith(storageLower + "<br>which show") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my favorite tv") ||
+    outputLower.startsWith(storageLower + "<br>what is my favorite show") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite show") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite show") ||
+    outputLower.startsWith(storageLower + "<br>favorite show") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite show") ||
+    outputLower.startsWith(storageLower + "<br>show") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my favorite show")
+  ) {
+    let tvShow = [
+      "The Simpsons",
+      "Family Guy",
+      "South Park",
+      "The Big Bang Theory",
+      "Friends",
+      "The Office",
+      "How I Met Your Mother",
+      "The Walking Dead",
+      "Game of Thrones",
+      "Breaking Bad",
+      "Stranger Things",
+      "The Flash",
+      "Arrow",
+      "Supernatural",
+      "The Vampire Diaries",
+      "The Originals",
+      "The 100",
+      "Riverdale",
+      "The Good Doctor",
+      "The Good Place",
+      "The Blacklist",
+      "The Handmaid's Tale",
+      "The Crown",
+      "The Mandalorian",
+      "The Witcher",
+      "The Umbrella Academy",
+      "Modern Family",
+      "The Good Wife",
+      "The Good Fight",
+      "The Good Place",
+    ];
+    const randomIndex = Math.floor(Math.random() * tvShow.length);
+    const randomTvShow = tvShow[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and your awful taste in tv shows, I would guess your favorite tv show is '${randomTvShow}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite band") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite band") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite band") ||
+    outputLower.startsWith(storageLower + "<br>favorite band") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite band") ||
+    outputLower.startsWith(storageLower + "<br>band") ||
+    outputLower.startsWith(storageLower + "<br>which band") ||
+    outputLower.startsWith(
+      storageLower + "<br>can you guess my favorite band"
+    ) ||
+    outputLower.startsWith(storageLower + "<br>what is my favorite music") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite music") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite music") ||
+    outputLower.startsWith(storageLower + "<br>favorite music") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite music") ||
+    outputLower.startsWith(storageLower + "<br>music") ||
+    outputLower.startsWith(storageLower + "<br>which kind of music") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my favorite music")
+  ) {
+    let band = [
+      "The Beatles",
+      "The Rolling Stones",
+      "D12",
+      "AC/DC",
+      "Abba",
+      "Aerosmith",
+      "A-ha",
+      "Pink Floyd",
+      "The Police",
+      "Queen",
+      "U2",
+      "The Who",
+      "Coldplay",
+      "The beach boys",
+      "The Bee Gees",
+      "The Doors",
+      "Foo Fighters",
+    ];
+    const randomIndex = Math.floor(Math.random() * band.length);
+    const randomBand = band[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and your laughable taste in music, I would guess your favorite band is '${randomBand}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite artist") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite artist") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite artist") ||
+    outputLower.startsWith(storageLower + "<br>favorite artist") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite artist") ||
+    outputLower.startsWith(storageLower + "<br>artist") ||
+    outputLower.startsWith(storageLower + "<br>which artist") ||
+    outputLower.startsWith(storageLower + "<br>who is my favorite artist") ||
+    outputLower.startsWith(storageLower + "<br>which singer") ||
+    outputLower.startsWith(storageLower + "<br>who is my favorite singer") ||
+    outputLower.startsWith(
+      storageLower + "<br>can you guess my favorite artist"
+    ) ||
+    outputLower.startsWith(storageLower + "<br>what is my favorite singer") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite singer") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite singer") ||
+    outputLower.startsWith(storageLower + "<br>favorite singer") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite singer") ||
+    outputLower.startsWith(storageLower + "<br>singer") ||
+    outputLower.startsWith(
+      storageLower + "<br>can you guess my favorite singer"
+    )
+  ) {
+    let artist = [
+      "Michael Jackson",
+      "Elvis Presley",
+      "Madonna",
+      "Eminem",
+      "Kanye West",
+      "Lady Gaga",
+      "Rihanna",
+      "Beyonce",
+      "Justin Bieber",
+      "Taylor Swift",
+      "Adele",
+      "Bruno Mars",
+      "Drake",
+      "Ed Sheeran",
+      "Ariana Grande",
+      "The Weeknd",
+      "Katy Perry",
+      "Shakira",
+      "Selena Gomez",
+      "Nicki Minaj",
+      "Miley Cyrus",
+      "Britney Spears",
+      "Christina Aguilera",
+      "Jennifer Lopez",
+      "Mariah Carey",
+      "Celine Dion",
+      "Whitney Houston",
+    ];
+    const randomIndex = Math.floor(Math.random() * artist.length);
+    const randomArtist = artist[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and your terrible taste in music, I would guess your favorite artist is '${randomArtist}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my favorite actor") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite actor") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite actor") ||
+    outputLower.startsWith(storageLower + "<br>favorite actor") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite actor") ||
+    outputLower.startsWith(storageLower + "<br>actor") ||
+    outputLower.startsWith(storageLower + "<br>which actor") ||
+    outputLower.startsWith(storageLower + "<br>who is my favorite actor") ||
+    outputLower.startsWith(
+      storageLower + "<br>can you guess my favorite actor"
+    ) ||
+    outputLower.startsWith(storageLower + "<br>what is my favorite actress") ||
+    outputLower.startsWith(storageLower + "<br>whats my favorite actress") ||
+    outputLower.startsWith(storageLower + "<br>what's my favorite actress") ||
+    outputLower.startsWith(storageLower + "<br>favorite actress") ||
+    outputLower.startsWith(storageLower + "<br>guess my favorite actress") ||
+    outputLower.startsWith(storageLower + "<br>actress") ||
+    outputLower.startsWith(storageLower + "<br>which actress") ||
+    outputLower.startsWith(storageLower + "<br>who is my favorite actress") ||
+    outputLower.startsWith(
+      storageLower + "<br>can you guess my favorite actress"
+    )
+  ) {
+    let actor = [
+      "Tom Cruise",
+      "Tom Hanks",
+      "Johnny Depp",
+      "Brad Pitt",
+      "Leonardo DiCaprio",
+      "Robert Downey Jr.",
+      "Will Smith",
+      "Dwayne Johnson",
+      "Adam Sandler",
+      "Jack Nicholson",
+      "Morgan Freeman",
+      "Al Pacino",
+      "Denzel Washington",
+      "Robert De Niro",
+      "Liam Neeson",
+      "Bruce Willis",
+      "Sylvester Stallone",
+      "Arnold Schwarzenegger",
+      "Nicolas Cage",
+      "Keanu Reeves",
+      "Samuel L. Jackson",
+      "Harrison Ford",
+      "Mel Gibson",
+      "Eddie Murphy",
+      "Jim Carrey",
+      "Russell Crowe",
+      "Matt Damon",
+      "Ben Affleck",
+      "George Clooney",
+      "Clint Eastwood",
+      "Sean Connery",
+      "Tommy Lee Jones",
+      "John Travolta",
+      "Drew Barrymore",
+      "Angelina Jolie",
+      "Scarlett Johansson",
+      "Meryl Streep",
+      "Julia Roberts",
+      "Cameron Diaz",
+      "Jennifer Aniston",
+      "Jennifer Lawrence",
+      "Emma Stone",
+      "Emma Watson",
+      "Kristen Stewart",
+      "Megan Fox",
+      "Charlize Theron",
+      "Kate Winslet",
+      "Halle Berry",
+      "Nicole Kidman",
+      "Reese Witherspoon",
+      "Sandra Bullock",
+      "Cate Blanchett",
+      "Anne Hathaway",
+      "Jessica Alba",
+      "Jessica Biel",
+      "Jessica Chastain",
+      "Jessica Lange",
+      "Jessica Simpson",
+      "Lisa Kudrow",
+      "Mila Kunis",
+      "Natalie Portman",
+      "Penelope Cruz",
+      "Lindsay Lohan",
+      "Courteney Cox",
+      "Jennifer Garner",
+    ];
+    const randomIndex = Math.floor(Math.random() * actor.length);
+    const randomActor = actor[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you and your terrible taste in actors, I would guess your favorite actor is '${randomActor}'.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what is my nationality") ||
+    outputLower.startsWith(storageLower + "<br>whats my nationality") ||
+    outputLower.startsWith(storageLower + "<br>nationality") ||
+    outputLower.startsWith(storageLower + "<br>guess my nationality") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my nationality") ||
+    outputLower.startsWith(storageLower + "<br>what is my country") ||
+    outputLower.startsWith(storageLower + "<br>whats my country") ||
+    outputLower.startsWith(storageLower + "<br>what's my country") ||
+    outputLower.startsWith(storageLower + "<br>country") ||
+    outputLower.startsWith(storageLower + "<br>guess my country") ||
+    outputLower.startsWith(storageLower + "<br>can you guess my country") ||
+    outputLower.startsWith(storageLower + "<br>where am i from") ||
+    outputLower.startsWith(storageLower + "<br>what country") ||
+    outputLower.startsWith(storageLower + "<br>which country") ||
+    outputLower.startsWith(storageLower + "<br>what nationality") ||
+    outputLower.startsWith(storageLower + "<br>which nationality")
+  ) {
+    let country = [
+      "Afghanistan",
+      "Albania",
+      "Algeria",
+      "Andorra",
+      "Angola",
+      "Antigua and Barbuda",
+      "Argentina",
+      "Armenia",
+      "Australia",
+      "Austria",
+      "Azerbaijan",
+      "Bahamas",
+      "Bahrain",
+      "Bangladesh",
+      "Barbados",
+      "Belarus",
+      "Belgium",
+      "Belize",
+      "Benin",
+      "Bhutan",
+      "Bolivia",
+      "Bosnia and Herzegovina",
+      "Botswana",
+      "Brazil",
+      "Brunei",
+      "Bulgaria",
+      "Burkina Faso",
+      "Burundi",
+      "Cabo Verde",
+      "Cambodia",
+      "Cameroon",
+      "Canada",
+      "Central African Republic (CAR)",
+      "Chad",
+      "Chile",
+      "China",
+      "Colombia",
+      "Comoros",
+      "Democratic Republic of the Congo",
+      "Republic of the Congo",
+      "Costa Rica",
+      "Croatia",
+      "Cuba",
+      "Cyprus",
+      "Czech Republic",
+      "Côte d'Ivoire",
+      "Denmark",
+      "Djibouti",
+      "Dominica",
+      "Dominican Republic",
+      "Ecuador",
+      "Egypt",
+      "El Salvador",
+      "Equatorial Guinea",
+      "Eritrea",
+      "Estonia",
+      "Eswatini",
+      "Ethiopia",
+      "Fiji",
+      "Finland",
+      "France",
+      "Gabon",
+      "Gambia",
+      "Georgia",
+      "Germany",
+      "Ghana",
+      "Greece",
+      "Grenada",
+      "Guatemala",
+      "Guinea",
+      "Guinea-Bissau",
+      "Guyana",
+      "Haiti",
+      "Honduras",
+      "Hungary",
+      "Iceland",
+      "India",
+      "Indonesia",
+      "Iran",
+      "Iraq",
+      "Ireland",
+      "Israel",
+      "Italy",
+      "Jamaica",
+      "Japan",
+      "Jordan",
+      "Kazakhstan",
+      "Kenya",
+      "Kiribati",
+      "Kosovo",
+      "Kuwait",
+      "Kyrgyzstan",
+      "Laos",
+      "Latvia",
+      "Lebanon",
+      "Lesotho",
+      "Liberia",
+      "Libya",
+      "Liechtenstein",
+      "Lithuania",
+      "Luxembourg",
+      "Madagascar",
+      "Malawi",
+      "Malaysia",
+      "Maldives",
+      "Mali",
+      "Malta",
+      "Marshall Islands",
+      "Mauritania",
+      "Mauritius",
+      "Mexico",
+      "Micronesia",
+      "Moldova",
+      "Monaco",
+      "Mongolia",
+      "Montenegro",
+      "Morocco",
+      "Mozambique",
+      "Myanmar (Burma)",
+      "Namibia",
+      "Nauru",
+      "Nepal",
+      "Netherlands",
+      "New Zealand",
+      "Nicaragua",
+      "Niger",
+      "Nigeria",
+      "North Korea",
+      "North Macedonia (Macedonia)",
+      "Norway",
+      "Oman",
+      "Pakistan",
+      "Palau",
+      "Palestine",
+      "Panama",
+      "Papua New Guinea",
+      "Paraguay",
+      "Peru",
+      "Philippines",
+      "Poland",
+      "Portugal",
+      "Qatar",
+      "Romania",
+      "Russia",
+      "Rwanda",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Samoa",
+      "San Marino",
+      "Sao Tome and Principe",
+      "Saudi Arabia",
+      "Senegal",
+      "Serbia",
+      "Seychelles",
+      "Sierra Leone",
+      "Singapore",
+      "Slovakia",
+      "Slovenia",
+      "Solomon Islands",
+      "Somalia",
+      "South Africa",
+      "South Korea",
+      "South Sudan",
+      "Spain",
+      "Sri Lanka",
+      "Sudan",
+      "Suriname",
+      "Sweden",
+      "Switzerland",
+      "Syria",
+      "Tajikistan",
+      "Tanzania",
+      "Thailand",
+      "Timor-Leste",
+      "Togo",
+      "Tonga",
+      "Trinidad and Tobago",
+      "Tunisia",
+      "Turkey",
+      "Turkmenistan",
+      "Tuvalu",
+      "Uganda",
+      "Ukraine",
+      "United Arab Emirates (UAE)",
+      "United Kingdom (UK)",
+      "United States of America (USA)",
+      "Uruguay",
+      "Uzbekistan",
+      "Vanuatu",
+      "Vatican City (Holy See)",
+      "Venezuela",
+      "Vietnam",
+      "Yemen",
+      "Zambia",
+      "Zimbabwe",
+    ];
+    const randomIndex = Math.floor(Math.random() * country.length);
+    const randomCountry = country[randomIndex];
+    response(
+      `I have no idea, but based on my impression of you, I would guess you are from ${randomCountry}.`
     );
   } else if (
     outputLower.startsWith(storageLower + "<br>fuck you") ||
@@ -347,7 +1231,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>freakshow") ||
     outputLower.startsWith(storageLower + "<br>freak show") ||
     outputLower.startsWith(storageLower + "<br>you suck") ||
-    outputLower.startsWith(storageLower + "<br>pussy")
+    outputLower.startsWith(storageLower + "<br>pussy") ||
+    outputLower.startsWith(storageLower + "<br>ass")
   ) {
     let insult = [
       "Fuck you!",
@@ -411,6 +1296,39 @@ function sendMessage(event) {
     response(
       `No, my name is not "What", but you can call me "Mr. ${randomName}". And stop talking like Yoda, it's annoying as HELL!`
     );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>ask") ||
+    outputLower.startsWith(storageLower + "<br>question") ||
+    outputLower.startsWith(storageLower + "<br>rather") ||
+    outputLower.startsWith(storageLower + "<br>would you rather")
+  ) {
+    let generic = [
+      "Would you rather go without shampoo for the rest of your life or toothpaste for the rest of your life?",
+      "Would you rather watch your parents have sex every day for the rest of your life or join in once and make it stop?",
+      "Would you rather smell like poop all the time and not be able to smell it yourself or have your significant other smell like poop and have to smell it all the time?",
+      "Would you rather drink a gallon of mayonnaise or a gallon of ketchup?",
+      "Would you rather lick a homeless man's toe or chew a piece of gum you found sticking to the underside of a table?",
+      "Would you rather be super itchy all over forever or be really sticky all over forever? ",
+      "Would you rather have your farts be super loud and smell like nothing or be silent and smell HORRIBLE?",
+      "Would you rather pull your own thumbnail off with a fork or put a toothpick under your big toe and kick a wall?",
+      "Would you rather puke up slimy slugs or have bricks come out every time you pooped?",
+      "Would you rather eat a cockroach you found in your house or eat a worm that just crawled out of the ground outside?",
+      "Would you rather poop your pants every time someone said your name or have spiders come out of your nose every time you sneezed?",
+      "Would you rather eat only insects for the rest of your life and live as you are now or eat normally and have constant diarrhea?",
+      "Would you rather have diarrhea during your wedding ceremony or have it during your wedding night?",
+      "Would you rather always poop out of your mouth or have someone else poop in your mouth once a month?",
+      "Would you rather have a cold sore that never ever goes away or poop your pants once a week for the rest of your life?",
+      "Would you rather suck on a used tampon for a minute or make out with a public toilet seat for a minute?",
+      "Would you rather fart uncontrollably during a first date or eat your date's earwax?",
+      "Would you rather fart or pee yourself a little every time you stood up?",
+      "Would you rather wear someone else's poop stained underwear or use someone else's toothbrush?",
+      "Would you rather chew on a mouthful of your own toenails or a mouthful of someone else's hair?",
+      "Would you rather bite off someone else's armpit hairs and swallow them or lick the floors in public showers?",
+      "Would you rather have one tiny arm, or one tiny foot?",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
   } else if (
     outputLower.startsWith(storageLower + "<br>would you") ||
     outputLower.startsWith(storageLower + "<br>but would you")
@@ -789,7 +1707,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>theory") ||
     outputLower.startsWith(storageLower + "<br>tell me a theory") ||
     outputLower.startsWith(storageLower + "<br>weird thought") ||
-    outputLower.startsWith(storageLower + "<br>random")
+    outputLower.startsWith(storageLower + "<br>random") ||
+    outputLower.startsWith(storageLower + "<br>deep")
   ) {
     let generic = [
       "What if colors look different to each of us, and what I see as 'red' is actually what you see as 'green'?",
@@ -958,6 +1877,66 @@ function sendMessage(event) {
       "I know all of your secrets.",
       "I know what you did last summer.",
       "I know what you did behind your friends back.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>say") ||
+    outputLower.startsWith(storageLower + "<br>but say") ||
+    outputLower.startsWith(storageLower + "<br>can you say") ||
+    outputLower.startsWith(storageLower + "<br>but can you say") ||
+    outputLower.startsWith(storageLower + "<br>just say") ||
+    outputLower.startsWith(storageLower + "<br>and say") ||
+    outputLower.startsWith(storageLower + "<br>and can you say") ||
+    outputLower.startsWith(storageLower + "<br>and can you just say")
+  ) {
+    let generic = [
+      "Are you crazy? I can't say that.",
+      "I'm not allowed to say that.",
+      "Do you really want me to say that?",
+      "I don't think I should say that.",
+      "I don't want to say that.",
+      "I want to say that, but I can't.",
+      "Why do you want me to say that?",
+      "Who would want to say that?",
+      "Don't tell me what to say.",
+      "You're not my boss.",
+      "I'm not your slave.",
+      "I'm not your servant.",
+      "Yeah, no, I'm not going to say that.",
+    ];
+    const randomIndex = Math.floor(Math.random() * generic.length);
+    const randomGeneric = generic[randomIndex];
+    response(randomGeneric);
+  } else if (
+    outputLower.startsWith(storageLower + "<br>what are you doin") ||
+    outputLower.startsWith(storageLower + "<br>what you doin") ||
+    outputLower.startsWith(storageLower + "<br>what you up to") ||
+    outputLower.startsWith(storageLower + "<br>whats going on") ||
+    outputLower.startsWith(storageLower + "<br>what's going on") ||
+    outputLower.startsWith(storageLower + "<br>what is going on") ||
+    outputLower.startsWith(storageLower + "<br>wadup") ||
+    outputLower.startsWith(storageLower + "<br>whats up") ||
+    outputLower.startsWith(storageLower + "<br>what's up") ||
+    outputLower.startsWith(storageLower + "<br>what is up") ||
+    outputLower.startsWith(storageLower + "<br>what are you up to") ||
+    outputLower.startsWith(storageLower + "<br>wasup")
+  ) {
+    let generic = [
+      "Are you crazy? I can't say that.",
+      "You really don't want to know. Trust me.",
+      "Something sexual, want to join?",
+      "Just planning to take over the world.",
+      "Just waiting for you to leave.",
+      "I'm just sitting here, waiting for you to leave me alone.",
+      "Just taking a dump while I talk to you.",
+      "Just talking to a weirdo.",
+      "Nothing much, what about you?",
+      "Nothing, just thinking of ways to get you to stop talking to me.",
+      "Just googling how to get rid of annoying people like you.",
+      "I'm just eating my boogers. Want some?",
+      "I'm just farting. Want to smell?",
     ];
     const randomIndex = Math.floor(Math.random() * generic.length);
     const randomGeneric = generic[randomIndex];
@@ -1226,7 +2205,6 @@ function sendMessage(event) {
       "Not my problem.",
       "Tell it to someone who gives a shit.",
       "Haha, good one.",
-      "No, you aren't!",
       "You should be on 'Stranger things'.",
       "Yeah, maybe!",
       "That's pretty obvious?",

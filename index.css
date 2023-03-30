@@ -217,4 +217,42 @@ li {
 }
 
 @media (max-width: 950px) {
+  body {
+    margin-left: 0rem;
+  }
+  .aside {
+    display: none;
+  }
+
+  .inputText {
+    width: 70vw;
+    margin-left: 0.5rem;
+  }
+
+  .capabilities {
+    width: 80vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .whiteBg {
+    width: 90vw;
+    height: 7rem;
+  }
+
+  .aside {
+    transition: 250ms ease;
+  }
+
+  .menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-image: url(/assets/menu.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 45px;
+    height: 45px;
+  }
 }

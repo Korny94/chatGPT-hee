@@ -7,24 +7,40 @@
     <title>ChatGPT-hee</title>
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
+    <link rel="icon" href="/assets/chat.png" />
   </head>
   <body>
     <main>
         <h1>ChatGPT-hee</h1>
-        <aside class="aside">
+        <div class="menu" id="menu"></div>
+        <aside class="aside" id="aside">
           <p class="newChat" id="newChat">+ New chat</p>
           <details>
             <summary>Question suggestions</summary>
             <ul>
                 <li>Ask yes or no questions</li>
+                <li>Call me mean things</li>
                 <li>Say "Give me a compliment"</li>
                 <li>Say "Tell me a joke"</li>
                 <li>Say "Insult me"</li>
                 <li>Say "Fun fact"</li>
+                <li>Say "Guess my..."</li>
+                <li>Say "See you later"</li>
+                <li>Say "Tell me a secret"</li>
+                <li>Say "Predict my future"</li>
+                <li>Say "Ask me a question"</li>
+                <li>Say "Say..."</li>
+                <li>Say "My name is..."</li>
+                <li>Say "What's your name?"</li>
+                <li>Say "Guess my name?"</li>
+                <li>Say "Guess my age"</li>
+                <li>Say "Guess my favorite..."</li>
+                <li>Say "Guess my nationality"</li>
+                <li>Say "Guess my occupation"</li>
                 <li>Say "I am..."</li>
                 <li>Say "You are..."</li>
                 <li>Say "Tell me something"</li>
-                <li>Call me mean things</li>
+                <li>Say "Ask me something"</li>
                 <li>Ask "Would you.."</li>
                 <li>Ask "Should I.."</li>
                 <li>Ask "How old am I?"</li>
@@ -62,9 +78,9 @@
         </aside>
         <div class="output" id="output"></div>
         <section class="capabilities" id="outputText">
-            <div>Ask questions or Insult me by calling me mean things</div>
+            <div>Ask questions or Insult me or "Predict my.." or "Ask me.."</div>
             <div>"Compliment me" or "Insult me" or "Am i.." or "See you later"</div>
-            <div>"Fun fact" or "Tell me a joke" or "Tell me a secret"</div>
+            <div>"Fun fact" or "Tell me a joke" or "Tell me a secret" or "Say.."</div>
             <div>"Guess my.." or "My name is.." or "What's your name?"</div>
             <div>"How are you?" or "Thank you" or "I am.." or "You are.."</div>
             <div>"Are you.." or "Could you.." or "Should I.." or "Would you.."</div>
@@ -86,27 +102,6 @@
       <div class="whiteBg" id="whiteBg"></div>
     </footer>
     <!-- 
-    Store basic info in local storage, like name & age 
-
-
-    calculator?
-
-    "shower thoughts"
-
-
-
-    "what do you do for a living?"
-
-
-   "what are you doing?" - wouldnt you like to know
-
-
-   "ask me a question"
-
-   "predict, give me a prediction / reading" - my sources say you will die
-
-   "Guess my height, zodiac sign, occupation, education, favorite color, gender, favorite food, nationality / country, favorite animal, favorite movie, favorite song, favorite book, favorite game, favorite sport, hobby, favorite tv show, favorite band, favorite artist, favorite actor"
-
 -->
 
   </body>
