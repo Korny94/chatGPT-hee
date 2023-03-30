@@ -28,6 +28,8 @@ const menu = document.querySelector("#menu");
 
 const h1 = document.querySelector("h1");
 
+const chatBg = document.querySelector(".chatBg");
+
 h1.onclick = function () {
   location.reload();
 };
@@ -59,7 +61,8 @@ darkMode.onclick = function () {
   darkModeCount++;
   if (darkModeCount % 2 === 1) {
     for (let i = 0; i < suggestBgDiv.length; i++) {
-      suggestBgDiv[i].style.backgroundColor = "#3e3f4b";
+      suggestBgDiv[i].style.backgroundColor = "##f7f7f8";
+      suggestBgDiv[i].style.color = "black";
       menu.style.filter = "invert()";
     }
     whiteBg.style.boxShadow = "0px -4px 20px 10px #343541";
