@@ -2484,7 +2484,13 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>)") ||
     outputLower.startsWith(storageLower + "<br>=") ||
     outputLower.startsWith(storageLower + "<br>+") ||
-    outputLower.startsWith(storageLower + "<br>-")
+    outputLower.startsWith(storageLower + "<br>-") ||
+    outputLower.startsWith(storageLower + "<br>:") ||
+    outputLower.startsWith(storageLower + "<br>;") ||
+    outputLower.startsWith(storageLower + "<br>`") ||
+    outputLower.startsWith(storageLower + "<br>^") ||
+    outputLower.startsWith(storageLower + "<br>~") ||
+    outputLower.startsWith(storageLower + "<br>_")
   ) {
     let generic = [
       "When you formulate yourself so poorly, I can't help but think you are a bot.",
