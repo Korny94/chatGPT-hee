@@ -2044,7 +2044,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>answer") ||
     outputLower.startsWith(storageLower + "<br>tell me") ||
     outputLower.startsWith(storageLower + "<br>just") ||
-    outputLower.startsWith(storageLower + "<br>please")
+    outputLower.startsWith(storageLower + "<br>please") ||
+    outputLower.startsWith(storageLower + "<br>so")
   ) {
     let generic = [
       "Isn't it obvious?",
