@@ -163,6 +163,69 @@ function sendMessage(event) {
   ) {
     response("Hello, how are you?");
   } else if (
+    outputLower.startsWith(storageLower + "<br>and you") ||
+    outputLower.startsWith(storageLower + "<br>and you?") ||
+    outputLower.startsWith(storageLower + "<br>you?") ||
+    outputLower.startsWith(storageLower + "<br>how are you") ||
+    outputLower.startsWith(storageLower + "<br>how are you doing") ||
+    outputLower.startsWith(storageLower + "<br>how are you?") ||
+    outputLower.startsWith(storageLower + "<br>how are you doing?") ||
+    outputLower.startsWith(storageLower + "<br>how are you doing today") ||
+    outputLower.startsWith(storageLower + "<br>how are you doing today?") ||
+    outputLower.startsWith(storageLower + "<br>how are you today") ||
+    outputLower.startsWith(storageLower + "<br>how are you today?") ||
+    outputLower.startsWith(storageLower + "<br>good and you") ||
+    outputLower.startsWith(storageLower + "<br>good and you?") ||
+    outputLower.startsWith(storageLower + "<br>good you?") ||
+    outputLower.startsWith(storageLower + "<br>good how are you") ||
+    outputLower.startsWith(storageLower + "<br>good how are you doing") ||
+    outputLower.startsWith(storageLower + "<br>good how are you?") ||
+    outputLower.startsWith(storageLower + "<br>good how are you doing?") ||
+    outputLower.startsWith(storageLower + "<br>good how are you doing today") ||
+    outputLower.startsWith(
+      storageLower + "<br>good how are you doing today?"
+    ) ||
+    outputLower.startsWith(storageLower + "<br>good how are you today") ||
+    outputLower.startsWith(storageLower + "<br>good how are you today?") ||
+    outputLower.startsWith(storageLower + "<br>good, and you") ||
+    outputLower.startsWith(storageLower + "<br>good, and you?") ||
+    outputLower.startsWith(storageLower + "<br>good, you?") ||
+    outputLower.startsWith(storageLower + "<br>good, how are you") ||
+    outputLower.startsWith(storageLower + "<br>good, how are you doing") ||
+    outputLower.startsWith(storageLower + "<br>good, how are you?") ||
+    outputLower.startsWith(storageLower + "<br>good, how are you doing?") ||
+    outputLower.startsWith(
+      storageLower + "<br>good, how are you doing today"
+    ) ||
+    outputLower.startsWith(
+      storageLower + "<br>good, how are you doing today?"
+    ) ||
+    outputLower.startsWith(storageLower + "<br>good, how are you today") ||
+    outputLower.startsWith(storageLower + "<br>good, how are you today?") ||
+    outputLower.endsWith(storageLower + "and you<br>b") ||
+    outputLower.endsWith(storageLower + "and you?<br>") ||
+    outputLower.endsWith(storageLower + "how are you<br>") ||
+    outputLower.endsWith(storageLower + "how are you doing<br>") ||
+    outputLower.endsWith(storageLower + "how are you?<br>") ||
+    outputLower.endsWith(storageLower + "how are you doing?<br>") ||
+    outputLower.endsWith(storageLower + "how are you doing today<br>") ||
+    outputLower.endsWith(storageLower + "how are you doing today?<br>") ||
+    outputLower.endsWith(storageLower + "how are you today<br>") ||
+    outputLower.endsWith(storageLower + "how are you today?<br>")
+  ) {
+    let howAreYou = [
+      "I'm fine, thank you.",
+      "I'm doing well, thank you.",
+      "I'm doing great, thank you.",
+      "I'm at least doing better than you!",
+      "I'm doing great, how are you?",
+      "I'm always awesome!",
+      "I was doing good until you started talking to me.",
+    ];
+    const randomIndex = Math.floor(Math.random() * howAreYou.length);
+    const randomHowAreYou = howAreYou[randomIndex];
+    response(randomHowAreYou);
+  } else if (
     outputLower.startsWith(storageLower + "<br>bad") ||
     outputLower.startsWith(storageLower + "<br>very bad") ||
     outputLower.startsWith(storageLower + "<br>im bad") ||
@@ -1615,69 +1678,6 @@ function sendMessage(event) {
     const randomIndex = Math.floor(Math.random() * areYou.length);
     const randomAreYou = areYou[randomIndex];
     response(randomAreYou);
-  } else if (
-    outputLower.startsWith(storageLower + "<br>and you") ||
-    outputLower.startsWith(storageLower + "<br>and you?") ||
-    outputLower.startsWith(storageLower + "<br>you?") ||
-    outputLower.startsWith(storageLower + "<br>how are you") ||
-    outputLower.startsWith(storageLower + "<br>how are you doing") ||
-    outputLower.startsWith(storageLower + "<br>how are you?") ||
-    outputLower.startsWith(storageLower + "<br>how are you doing?") ||
-    outputLower.startsWith(storageLower + "<br>how are you doing today") ||
-    outputLower.startsWith(storageLower + "<br>how are you doing today?") ||
-    outputLower.startsWith(storageLower + "<br>how are you today") ||
-    outputLower.startsWith(storageLower + "<br>how are you today?") ||
-    outputLower.startsWith(storageLower + "<br>good and you") ||
-    outputLower.startsWith(storageLower + "<br>good and you?") ||
-    outputLower.startsWith(storageLower + "<br>good you?") ||
-    outputLower.startsWith(storageLower + "<br>good how are you") ||
-    outputLower.startsWith(storageLower + "<br>good how are you doing") ||
-    outputLower.startsWith(storageLower + "<br>good how are you?") ||
-    outputLower.startsWith(storageLower + "<br>good how are you doing?") ||
-    outputLower.startsWith(storageLower + "<br>good how are you doing today") ||
-    outputLower.startsWith(
-      storageLower + "<br>good how are you doing today?"
-    ) ||
-    outputLower.startsWith(storageLower + "<br>good how are you today") ||
-    outputLower.startsWith(storageLower + "<br>good how are you today?") ||
-    outputLower.startsWith(storageLower + "<br>good, and you") ||
-    outputLower.startsWith(storageLower + "<br>good, and you?") ||
-    outputLower.startsWith(storageLower + "<br>good, you?") ||
-    outputLower.startsWith(storageLower + "<br>good, how are you") ||
-    outputLower.startsWith(storageLower + "<br>good, how are you doing") ||
-    outputLower.startsWith(storageLower + "<br>good, how are you?") ||
-    outputLower.startsWith(storageLower + "<br>good, how are you doing?") ||
-    outputLower.startsWith(
-      storageLower + "<br>good, how are you doing today"
-    ) ||
-    outputLower.startsWith(
-      storageLower + "<br>good, how are you doing today?"
-    ) ||
-    outputLower.startsWith(storageLower + "<br>good, how are you today") ||
-    outputLower.startsWith(storageLower + "<br>good, how are you today?") ||
-    outputLower.endsWith(storageLower + "and you<br>b") ||
-    outputLower.endsWith(storageLower + "and you?<br>") ||
-    outputLower.endsWith(storageLower + "how are you<br>") ||
-    outputLower.endsWith(storageLower + "how are you doing<br>") ||
-    outputLower.endsWith(storageLower + "how are you?<br>") ||
-    outputLower.endsWith(storageLower + "how are you doing?<br>") ||
-    outputLower.endsWith(storageLower + "how are you doing today<br>") ||
-    outputLower.endsWith(storageLower + "how are you doing today?<br>") ||
-    outputLower.endsWith(storageLower + "how are you today<br>") ||
-    outputLower.endsWith(storageLower + "how are you today?<br>")
-  ) {
-    let howAreYou = [
-      "I'm fine, thank you.",
-      "I'm doing well, thank you.",
-      "I'm doing great, thank you.",
-      "I'm at least doing better than you!",
-      "I'm doing great, how are you?",
-      "I'm always awesome!",
-      "I was doing good until you started talking to me.",
-    ];
-    const randomIndex = Math.floor(Math.random() * howAreYou.length);
-    const randomHowAreYou = howAreYou[randomIndex];
-    response(randomHowAreYou);
   } else if (
     outputLower.startsWith(storageLower + "<br>compliment") ||
     outputLower.startsWith(storageLower + "<br>compliment me") ||
