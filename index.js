@@ -61,7 +61,7 @@ darkMode.onclick = function () {
   darkModeCount++;
   if (darkModeCount % 2 === 1) {
     for (let i = 0; i < suggestBgDiv.length; i++) {
-      suggestBgDiv[i].style.backgroundColor = "##f7f7f8";
+      suggestBgDiv[i].style.backgroundColor = "#f7f7f8";
       suggestBgDiv[i].style.color = "black";
       menu.style.filter = "invert()";
     }
