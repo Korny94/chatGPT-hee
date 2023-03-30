@@ -1379,7 +1379,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>useless") ||
     outputLower.startsWith(storageLower + "<br>youre useless") ||
     outputLower.startsWith(storageLower + "<br>you are useless") ||
-    outputLower.startsWith(storageLower + "<br>you're useless")
+    outputLower.startsWith(storageLower + "<br>you're useless") ||
+    outputLower.startsWith(storageLower + "<br>suck")
   ) {
     let insult = [
       "Fuck you!",
@@ -1846,7 +1847,12 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>give me a fun fact") ||
     outputLower.startsWith(storageLower + "<br>weird fact") ||
     outputLower.startsWith(storageLower + "<br>common knowledge") ||
-    outputLower.startsWith(storageLower + "<br>cool fact")
+    outputLower.startsWith(storageLower + "<br>cool fact") ||
+    outputLower.startsWith(storageLower + "<br>im bored") ||
+    outputLower.startsWith(storageLower + "<br>boring") ||
+    outputLower.startsWith(storageLower + "<br>bored") ||
+    outputLower.startsWith(storageLower + "<br>i'm bored") ||
+    outputLower.startsWith(storageLower + "<br>i am bored")
   ) {
     let generic = [
       "The small intestine is bigger than the large intestine.",
