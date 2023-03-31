@@ -159,7 +159,9 @@ function sendMessage(event) {
   if (
     outputLower.startsWith(storageLower + "<br>hi") ||
     outputLower.startsWith(storageLower + "<br>hello") ||
-    outputLower.startsWith(storageLower + "<br>hola")
+    outputLower.startsWith(storageLower + "<br>hola") ||
+    outputLower.startsWith(storageLower + "<br>yo") ||
+    outputLower.startsWith(storageLower + "<br>hey")
   ) {
     response("Hello, how are you?");
   } else if (
@@ -572,7 +574,19 @@ function sendMessage(event) {
     response(
       `I have no idea, but based on my impression of you and how crazy you are, I would guess you are a '${randomJob}'.`
     );
-  } else if (outputLower.startsWith(storageLower + "<br>how long")) {
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how long time") ||
+    outputLower.startsWith(storageLower + "<br>how much time") ||
+    outputLower.startsWith(storageLower + "<br>how many days") ||
+    outputLower.startsWith(storageLower + "<br>how many weeks") ||
+    outputLower.startsWith(storageLower + "<br>how many months") ||
+    outputLower.startsWith(storageLower + "<br>how many years") ||
+    outputLower.startsWith(storageLower + "<br>how many hours") ||
+    outputLower.startsWith(storageLower + "<br>how many minutes") ||
+    outputLower.startsWith(storageLower + "<br>how many seconds") ||
+    outputLower.startsWith(storageLower + "<br>how many milliseconds") ||
+    outputLower.startsWith(storageLower + "<br>how many decades")
+  ) {
     let howLong = [
       "2 days",
       "1 week",
@@ -589,7 +603,234 @@ function sendMessage(event) {
     const randomIndex = Math.floor(Math.random() * howLong.length);
     const randomHowLong = howLong[randomIndex];
     response(
-      `I have no idea, but my best guess would be about ${randomHowLong}.`
+      `Based on my highly accurate calculations I would say about ${randomHowLong}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how hot") ||
+    outputLower.startsWith(storageLower + "<br>how cold") ||
+    outputLower.startsWith(storageLower + "<br>how warm") ||
+    outputLower.startsWith(storageLower + "<br>how cool") ||
+    outputLower.startsWith(storageLower + "<br>how many degrees") ||
+    outputLower.startsWith(storageLower + "<br>how many celsius") ||
+    outputLower.startsWith(storageLower + "<br>how many fahrenheit") ||
+    outputLower.startsWith(storageLower + "<br>how many kelvin") ||
+    outputLower.startsWith(storageLower + "<br>how many centigrade") ||
+    outputLower.startsWith(storageLower + "<br>how many farenheit")
+  ) {
+    let howHot = [
+      "2 degrees",
+      "10 degrees",
+      "100 degrees",
+      "45 degrees",
+      "10000 degrees",
+      "-2 degrees",
+      "-10 degrees",
+      "-100 degrees",
+      "-36 degrees",
+      "-273.15 degrees",
+    ];
+    const randomIndex = Math.floor(Math.random() * howHot.length);
+    const randomHowHot = howHot[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say about ${randomHowHot}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how often") ||
+    outputLower.startsWith(storageLower + "<br>how many times a") ||
+    outputLower.startsWith(storageLower + "<br>how rare") ||
+    outputLower.startsWith(storageLower + "<br>how common") ||
+    outputLower.startsWith(storageLower + "<br>how frequent") ||
+    outputLower.startsWith(storageLower + "<br>how infrequent")
+  ) {
+    let howOften = [
+      "day",
+      "week",
+      "month",
+      "year",
+      "10 years",
+      "100 years",
+      "1000 years",
+      "two seconds",
+      "10 seconds",
+      "2 hours",
+      "10 hours",
+      "2 minutes",
+      "10 minutes",
+      "2 days",
+      "10 days",
+    ];
+    const randomIndex = Math.floor(Math.random() * howOften.length);
+    const randomHowOften = howOften[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say about once every ${randomHowOften}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how heavy") ||
+    outputLower.startsWith(storageLower + "<br>how much weight") ||
+    outputLower.startsWith(storageLower + "<br>how much mass") ||
+    outputLower.startsWith(storageLower + "<br>how many kilograms") ||
+    outputLower.startsWith(storageLower + "<br>how many pounds") ||
+    outputLower.startsWith(storageLower + "<br>how many grams") ||
+    outputLower.startsWith(storageLower + "<br>how many tons") ||
+    outputLower.startsWith(storageLower + "<br>how many ounces") ||
+    outputLower.startsWith(storageLower + "<br>how many stones") ||
+    outputLower.startsWith(storageLower + "<br>how many milligrams") ||
+    outputLower.startsWith(storageLower + "<br>how many milliliters") ||
+    outputLower.startsWith(storageLower + "<br>how many liters") ||
+    outputLower.startsWith(storageLower + "<br>how many millilitres") ||
+    outputLower.startsWith(storageLower + "<br>how many litres") ||
+    outputLower.startsWith(storageLower + "<br>how light") ||
+    outputLower.startsWith(storageLower + "<br>how much do i weigh")
+  ) {
+    let howHeavy = [
+      "2 kilograms",
+      "10 kilograms",
+      "100 kilograms",
+      "45 kilograms",
+      "1 gram",
+      "20 grams",
+      "200 grams",
+      "450 grams",
+      "1 pound",
+      "20 pounds",
+      "200 pounds",
+      "2 tons",
+      "10 tons",
+    ];
+    const randomIndex = Math.floor(Math.random() * howHeavy.length);
+    const randomHowHeavy = howHeavy[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say about ${randomHowHeavy}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how easy") ||
+    outputLower.startsWith(storageLower + "<br>how hard") ||
+    outputLower.startsWith(storageLower + "<br>how difficult") ||
+    outputLower.startsWith(storageLower + "<br>how simple") ||
+    outputLower.startsWith(storageLower + "<br>how complicated") ||
+    outputLower.startsWith(storageLower + "<br>how complex")
+  ) {
+    let howEasy = [
+      "very easy",
+      "very hard",
+      "very difficult",
+      "very simple",
+      "very complicated",
+      "very complex",
+      "easy peasie lemon squeezy",
+      "hard as a rock",
+      "difficult as hell",
+      "simple as pie",
+      "complicated as hell",
+      "complex as hell",
+      "not easy at all, especially for you",
+      "not hard at all, especially for you",
+      "not difficult at all, especially for you",
+      "not simple at all, especially for you",
+      "not complicated at all, especially for you",
+      "not complex at all, especially for you",
+      "not that easy, especially for you",
+    ];
+    const randomIndex = Math.floor(Math.random() * howEasy.length);
+    const randomHowEasy = howEasy[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say ${randomHowEasy}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how good") ||
+    outputLower.startsWith(storageLower + "<br>how bad")
+  ) {
+    let howGood = [
+      "very good",
+      "very bad",
+      "good",
+      "bad",
+      "not good",
+      "not bad",
+      "not very good",
+      "not very bad",
+      "not that good",
+      "not that bad",
+      "not that great",
+      "terrible",
+      "horrible",
+      "piss poor",
+      "excellent",
+    ];
+    const randomIndex = Math.floor(Math.random() * howGood.length);
+    const randomHowGood = howGood[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say ${randomHowGood}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how far") ||
+    outputLower.startsWith(storageLower + "<br>how long") ||
+    outputLower.startsWith(storageLower + "<br>how big") ||
+    outputLower.startsWith(storageLower + "<br>how small") ||
+    outputLower.startsWith(storageLower + "<br>how tiny") ||
+    outputLower.startsWith(storageLower + "<br>how short") ||
+    outputLower.startsWith(storageLower + "<br>how deep") ||
+    outputLower.startsWith(storageLower + "<br>how wide") ||
+    outputLower.startsWith(storageLower + "<br>how tall") ||
+    outputLower.startsWith(storageLower + "<br>how high") ||
+    outputLower.startsWith(storageLower + "<br>how thick")
+  ) {
+    let howFar = [
+      "2 centimeters",
+      "1 meter",
+      "50 meters",
+      "1 millimeter",
+      "1 kilometer",
+      "10 centimeters",
+      "3 miles",
+      "1 million kilometers",
+      "2 inches",
+    ];
+    const randomIndex = Math.floor(Math.random() * howFar.length);
+    const randomHowFar = howFar[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say about ${randomHowFar}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how fast") ||
+    outputLower.startsWith(storageLower + "<br>how slow") ||
+    outputLower.startsWith(storageLower + "<br>how quick")
+  ) {
+    let howFast = [
+      "very fast",
+      "very slow",
+      "fast",
+      "slow",
+      "lightning fast",
+      "snail speed",
+    ];
+    const randomIndex = Math.floor(Math.random() * howFast.length);
+    const randomHowFast = howFast[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say about ${randomHowFast}.`
+    );
+  } else if (
+    outputLower.startsWith(storageLower + "<br>how many") ||
+    outputLower.startsWith(storageLower + "<br>how much") ||
+    outputLower.startsWith(storageLower + "<br>how little") ||
+    outputLower.startsWith(storageLower + "<br>how few")
+  ) {
+    let howMany = [
+      "2",
+      "1",
+      "50",
+      "100",
+      "10",
+      "1000",
+      "ten thousand",
+      "one million",
+      "one billion",
+      "one trillion",
+    ];
+    const randomIndex = Math.floor(Math.random() * howMany.length);
+    const randomHowMany = howMany[randomIndex];
+    response(
+      `Based on my highly accurate calculations I would say about ${randomHowMany}.`
     );
   } else if (
     outputLower.startsWith(storageLower + "<br>what is my favorite color") ||
