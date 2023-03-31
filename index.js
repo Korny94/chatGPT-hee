@@ -572,6 +572,25 @@ function sendMessage(event) {
     response(
       `I have no idea, but based on my impression of you and how crazy you are, I would guess you are a '${randomJob}'.`
     );
+  } else if (outputLower.startsWith(storageLower + "<br>how long")) {
+    let howLong = [
+      "2 days",
+      "1 week",
+      "2 seconds",
+      "10 seconds",
+      "1 minute",
+      "2 years",
+      "100 years",
+      "1 month",
+      "1 millisecond",
+      "1 hour",
+      "12 hours",
+    ];
+    const randomIndex = Math.floor(Math.random() * howLong.length);
+    const randomHowLong = howLong[randomIndex];
+    response(
+      `I have no idea, but my best guess would be about ${randomHowLong}.`
+    );
   } else if (
     outputLower.startsWith(storageLower + "<br>what is my favorite color") ||
     outputLower.startsWith(storageLower + "<br>whats my favorite color") ||
