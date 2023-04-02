@@ -576,6 +576,9 @@ function sendMessage(event) {
     );
   } else if (
     outputLower.startsWith(storageLower + "<br>how long time") ||
+    outputLower.startsWith(storageLower + "<br>how long does") ||
+    outputLower.startsWith(storageLower + "<br>how long do") ||
+    outputLower.startsWith(storageLower + "<br>how long did") ||
     outputLower.startsWith(storageLower + "<br>how much time") ||
     outputLower.startsWith(storageLower + "<br>how many days") ||
     outputLower.startsWith(storageLower + "<br>how many weeks") ||
