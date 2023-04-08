@@ -161,6 +161,7 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>hello") ||
     outputLower.startsWith(storageLower + "<br>hola") ||
     outputLower.startsWith(storageLower + "<br>yo") ||
+    outputLower.endsWith(storageLower + "<br>yo") ||
     outputLower.startsWith(storageLower + "<br>hey")
   ) {
     response("Hello, how are you?");
