@@ -245,7 +245,20 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>okey i'm bad") ||
     outputLower.startsWith(storageLower + "<br>okei bad") ||
     outputLower.startsWith(storageLower + "<br>okei i'm bad") ||
-    outputLower.startsWith(storageLower + "<br>okei im bad")
+    outputLower.startsWith(storageLower + "<br>okei im bad") ||
+    outputLower.startsWith(storageLower + "<br>i am bad") ||
+    outputLower.startsWith(storageLower + "<br>i am very bad") ||
+    outputLower.startsWith(storageLower + "<br>i am bad") ||
+    outputLower.startsWith(storageLower + "<br>i am bad") ||
+    outputLower.startsWith(storageLower + "<br>i am not good") ||
+    outputLower.startsWith(storageLower + "<br>i am not so good") ||
+    outputLower.startsWith(storageLower + "<br>i am not so good<") ||
+    outputLower.startsWith(storageLower + "<br>i am not doing so good") ||
+    outputLower.startsWith(storageLower + "<br>i am not so good") ||
+    outputLower.startsWith(storageLower + "<br>i am not doing so good") ||
+    outputLower.startsWith(storageLower + "<br>ok i am bad") ||
+    outputLower.startsWith(storageLower + "<br>okey i am bad") ||
+    outputLower.startsWith(storageLower + "<br>okei i am bad")
   ) {
     response("That's good to hear! Hope it gets worse!");
   } else if (
@@ -261,7 +274,45 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>i'm fine") ||
     outputLower.startsWith(storageLower + "<br>not bad") ||
     outputLower.startsWith(storageLower + "<br>cant complain") ||
-    outputLower.startsWith(storageLower + "<br>can't complain")
+    outputLower.startsWith(storageLower + "<br>can't complain") ||
+    outputLower.startsWith(storageLower + "<br>i'm very good") ||
+    outputLower.startsWith(storageLower + "<br>i'm great") ||
+    outputLower.startsWith(storageLower + "<br>i'm awesome") ||
+    outputLower.startsWith(storageLower + "<br>i'm amazing") ||
+    outputLower.startsWith(storageLower + "<br>i'm fine") ||
+    outputLower.startsWith(storageLower + "<br>im good") ||
+    outputLower.startsWith(storageLower + "<br>i'm good") ||
+    outputLower.startsWith(storageLower + "<br>im fine") ||
+    outputLower.startsWith(storageLower + "<br>i'm fine") ||
+    outputLower.startsWith(storageLower + "<br>not bad") ||
+    outputLower.startsWith(storageLower + "<br>cant complain") ||
+    outputLower.startsWith(storageLower + "<br>can't complain") ||
+    outputLower.startsWith(storageLower + "<br>im good") ||
+    outputLower.startsWith(storageLower + "<br>im very good") ||
+    outputLower.startsWith(storageLower + "<br>im great") ||
+    outputLower.startsWith(storageLower + "<br>im awesome") ||
+    outputLower.startsWith(storageLower + "<br>im amazing") ||
+    outputLower.startsWith(storageLower + "<br>im fine") ||
+    outputLower.startsWith(storageLower + "<br>im good") ||
+    outputLower.startsWith(storageLower + "<br>i'm good") ||
+    outputLower.startsWith(storageLower + "<br>im fine") ||
+    outputLower.startsWith(storageLower + "<br>i'm fine") ||
+    outputLower.startsWith(storageLower + "<br>not bad") ||
+    outputLower.startsWith(storageLower + "<br>cant complain") ||
+    outputLower.startsWith(storageLower + "<br>can't complain") ||
+    outputLower.startsWith(storageLower + "<br>i am good") ||
+    outputLower.startsWith(storageLower + "<br>i am very good") ||
+    outputLower.startsWith(storageLower + "<br>i am great") ||
+    outputLower.startsWith(storageLower + "<br>i am awesome") ||
+    outputLower.startsWith(storageLower + "<br>i am amazing") ||
+    outputLower.startsWith(storageLower + "<br>i am fine") ||
+    outputLower.startsWith(storageLower + "<br>i am good") ||
+    outputLower.startsWith(storageLower + "<br>i am good") ||
+    outputLower.startsWith(storageLower + "<br>i am fine") ||
+    outputLower.startsWith(storageLower + "<br>i am fine") ||
+    outputLower.startsWith(storageLower + "<br>i am not bad") ||
+    outputLower.startsWith(storageLower + "<br>i cant complain") ||
+    outputLower.startsWith(storageLower + "<br>i can't complain")
   ) {
     response("That is a little disappointing, I was hoping you'd say bad.");
   } else if (
@@ -2608,7 +2659,9 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>that") ||
     outputLower.startsWith(storageLower + "<br>je") ||
     outputLower.startsWith(storageLower + "<br>sorry") ||
-    outputLower.startsWith(storageLower + "<br>ge")
+    outputLower.startsWith(storageLower + "<br>ge") ||
+    outputLower.startsWith(storageLower + "<br>of course") ||
+    outputLower.startsWith(storageLower + "<br>no doubt")
   ) {
     let generic = [
       "It's true though.",
