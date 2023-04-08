@@ -157,8 +157,8 @@ function sendMessage(event) {
   const storageLower = outputStorage.toLowerCase();
 
   if (
-    !outputLower.startsWith(storageLower + "<br>you") ||
-    outputLower.startsWith(storageLower + "<br>yo") ||
+    (!outputLower.startsWith(storageLower + "<br>you") &&
+      outputLower.startsWith(storageLower + "<br>yo")) ||
     outputLower.startsWith(storageLower + "<br>hi") ||
     outputLower.startsWith(storageLower + "<br>hello") ||
     outputLower.startsWith(storageLower + "<br>hola") ||
