@@ -2123,6 +2123,7 @@ function sendMessage(event) {
   } else if (
     outputLower.startsWith(storageLower + "<br>joke") ||
     outputLower.startsWith(storageLower + "<br>tell me a joke") ||
+    outputLower.startsWith(storageLower + "<br>tell me joke") ||
     outputLower.startsWith(storageLower + "<br>funny joke") ||
     outputLower.startsWith(storageLower + "<br>give me a joke") ||
     outputLower.startsWith(storageLower + "<br>tell me a funny joke") ||
