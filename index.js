@@ -1699,7 +1699,8 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>you're useless") ||
     outputLower.startsWith(storageLower + "<br>suck") ||
     outputLower.startsWith(storageLower + "<br>fuck") ||
-    outputLower.startsWith(storageLower + "<br>butt")
+    outputLower.startsWith(storageLower + "<br>butt") ||
+    outputLower.startsWith(storageLower + "<br>go fuck")
   ) {
     let insult = [
       "Fuck you!",
