@@ -321,7 +321,7 @@ function sendMessage(event) {
     outputLower.startsWith(storageLower + "<br>goodbye") ||
     outputLower.startsWith(storageLower + "<br>good bye")
   ) {
-    response("FINALLY! Goodbye, have an aweful day!");
+    response("FINALLY! Goodbye, have an awful day!");
   } else if (outputLower.startsWith(storageLower + "<br>see you")) {
     let answer = [
       "My God I hope not!",
